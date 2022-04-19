@@ -139,7 +139,7 @@ export default function Home() {
         >
           <Box _hover={{ cursor: `pointer` }}>
             <FaDiscord
-              onClick={() => router.push("https://discord.gg/csjvEU4m")}
+              onClick={() => router.push("https://discord.gg/cheebiez")}
             />
           </Box>
           <Box _hover={{ cursor: `pointer` }}>
