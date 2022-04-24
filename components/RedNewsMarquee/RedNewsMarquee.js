@@ -21,7 +21,7 @@ export const RedNewsMarquee = (props) => {
     100% { transform: translateX(-50%);}
     `;
 
-  const newsStorynimation = `${newsStoryKeyframes} 20s linear infinite`;
+  const newsStorynimation = `${newsStoryKeyframes} 40s linear infinite`;
 
   return (
     <Box className={styles.container}>

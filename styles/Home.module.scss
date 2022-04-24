@@ -7,6 +7,15 @@
   position: relative;
 }
 
+.siteLogo {
+  position: absolute;
+  z-index: 120;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  max-width: 750px;
+}
+
 .connectButton {
   background: white;
   border-radius: 500px;
@@ -59,3 +68,115 @@
   }
 }
 
+.enterCheebieverseGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  height: 100%;
+}
+
+.cheebieverseHeadline {
+  color: white;
+  font-size: 15vh;
+  font-family: "Wildside", sans-serif;
+  line-height: 1;
+  text-align: center;
+  transform: rotate(-15deg);
+}
+
+.cheebieverseContent {
+  color: white;
+  font-size: 2rem;
+  font-family: "DK Hand", sans-serif;
+  line-height: 1.2;
+  text-align: center;
+  transform: translateX(80px) rotate(-15deg);
+}
+
+.cheebieApple {
+  max-width: 70%;
+  transform: translateX(100px)
+}
+
+.cheebieAugustus {
+  max-width: 80%;
+}
+
+.whatAreCheebiezHeadline {
+  color: white;
+  font-size: 15vh;
+  font-family: "Wildside", sans-serif;
+  line-height: 1;
+  text-align: center;
+  transform: rotate(15deg);
+}
+
+.whatAreCheebiezContent {
+  color: white;
+  font-size: 2rem;
+  font-family: "DK Hand", sans-serif;
+  line-height: 1.2;
+  text-align: center;
+  transform: translateX(-80px) rotate(15deg);
+}
+
+.teamHeadline {
+  color: white;
+  font-size: 12vh;
+  font-family: "Wildside", sans-serif;
+  line-height: 1;
+  text-align: center;
+  max-width: 10ch;
+}
+
+.projectLeadHeadline {
+  color: white;
+  font-size: 8vh;
+  font-family: "Wildside", sans-serif;
+  line-height: 1;
+  text-align: center;
+}
+
+.projectLeadIcon {
+  max-width: 17.5vw;
+  aspect-ratio: 1/1;
+}
+
+.projectLeadRole {
+  color: white;
+  font-family: "DK Hand", sans-serif;
+  font-size: 2rem;
+}
+
+.teamGrid {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.teamMemberCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.teamMemberName {
+  color: white;
+  font-size: 2rem;
+  font-family: "Wildside", sans-serif;
+  line-height: 1;
+  text-align: center;
+}
+
+.teamMemberImage {
+  max-width: 66%;
+  aspect-ratio: 1/1;
+}
+
+.teamMemberRole {
+  color: white;
+  font-family: "DK Hand", sans-serif;
+  font-size: 1.77rem;
+  text-transform: lowercase;
+}
