@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Wildside";
+  src: url("/Wildside.woff");
+}
+
+@font-face {
+  font-family: "DK Hand";
+  src: url("/DK-Hand.woff");
+}
+
 html,
 body {
   padding: 0;

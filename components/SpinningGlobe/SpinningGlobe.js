@@ -15,14 +15,14 @@ export const SpinningGlobe = () => {
   100% { transform: rotate(-360deg);}
   `;
 
- const lineArtSpinAnimation = `${lineArtSpinKeyframes} 60s linear infinite`;
+  const lineArtSpinAnimation = `${lineArtSpinKeyframes} 60s linear infinite`;
 
   return (
     <>
-      <Box className={styles.container}>
+      <Box className={styles.container} draggable="false">
         <Image
-        as={motion.img}
-        animation={lineArtSpinAnimation}
+          as={motion.img}
+          animation={lineArtSpinAnimation}
           className={styles.lineArt}
           src="/images/GlobeAssets/GlobeLineArt.png"
           alt=""
@@ -34,16 +34,19 @@ export const SpinningGlobe = () => {
           className={styles.globe}
           src="/images/GlobeAssets/Globe.png"
           alt=""
+          draggable="false"
         />
         <Image
           className={styles.highlight}
           src="/images/GlobeAssets/Highlight.png"
           alt=""
+          draggable="false"
         />
         <Image
           className={styles.shadow}
           src="/images/GlobeAssets/Shadow.png"
           alt=""
+          draggable="false"
         />
         <Image
           as={motion.img}
@@ -51,6 +54,7 @@ export const SpinningGlobe = () => {
           className={styles.globe}
           src="/images/GlobeAssets/GlobeOutline.png"
           alt=""
+          draggable="false"
         />
       </Box>
     </>

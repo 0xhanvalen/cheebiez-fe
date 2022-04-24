@@ -1,0 +1,61 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: center;
+  z-index: 10;
+  position: relative;
+}
+
+.connectButton {
+  background: white;
+  border-radius: 500px;
+  padding: 1rem 2rem;
+  transition: all 0.5s;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+  }
+  user-select: none;
+}
+
+.socialButton {
+  user-select: none;
+  max-width: 3rem;
+  aspect-ratio: 1/1;
+  transition: all 0.5s;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+  }
+}
+
+.mintButton {
+  background: white;
+  border-radius: 500px;
+  padding: 1rem 2rem;
+  transition: all 0.5s;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+  }
+  user-select: none;
+}
+
+.userAddress {
+  background: white;
+  border-radius: 500px;
+  padding: .5ex 1em;
+  transition: all 0.5s;
+  font-family: "DK Hand", sans-serif;
+  color: #2595e3;
+  font-size: 2rem;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+  }
+}
+
