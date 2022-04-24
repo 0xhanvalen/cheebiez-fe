@@ -13,7 +13,7 @@ export default function Home() {
       
       console.log(address);
     }, [address])
-    const {ens, avatar, loading} = useENS({address});
+    const {ens, avatar, loading: loadingENS} = useENS({address});
   const isMinting = false;
   return (
     <>
@@ -41,7 +41,7 @@ export default function Home() {
             )}
             {address && (
               <Box className={styles.userAddress} onClick={() => disconnect()}>
-                {ens || formatAddress(address)}
+                {loadingENS && "Loading ENS" || ens || formatAddress(address)}
               </Box>
             )}
             <Box sx={{ display: `flex`, alignItems: `center`, gap: `1rem` }}>
