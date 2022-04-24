@@ -24,7 +24,7 @@ export const SpinningGlobe = () => {
         as={motion.img}
         animation={lineArtSpinAnimation}
           className={styles.lineArt}
-          src="/Images/GlobeAssets/GlobeLineArt.png"
+          src="/images/GlobeAssets/GlobeLineArt.png"
           alt=""
           draggable="false"
         />
@@ -32,24 +32,24 @@ export const SpinningGlobe = () => {
           as={motion.img}
           animation={globeSpinAnimation}
           className={styles.globe}
-          src="/Images/GlobeAssets/Globe.png"
+          src="/images/GlobeAssets/Globe.png"
           alt=""
         />
         <Image
           className={styles.highlight}
-          src="/Images/GlobeAssets/Highlight.png"
+          src="/images/GlobeAssets/Highlight.png"
           alt=""
         />
         <Image
           className={styles.shadow}
-          src="/Images/GlobeAssets/Shadow.png"
+          src="/images/GlobeAssets/Shadow.png"
           alt=""
         />
         <Image
           as={motion.img}
           animation={globeSpinAnimation}
           className={styles.globe}
-          src="/Images/GlobeAssets/GlobeOutline.png"
+          src="/images/GlobeAssets/GlobeOutline.png"
           alt=""
         />
       </Box>
