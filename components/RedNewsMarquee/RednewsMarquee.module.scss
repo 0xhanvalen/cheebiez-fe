@@ -1,0 +1,48 @@
+.container {
+    position: absolute;
+    top: 90vh;
+}
+
+.newsbanner {
+    width: 100vw;
+    position: relative;
+}
+
+.headline {
+    color: white;
+    font-size: 3.66rem;
+    font-family: "Wildside", sans-serif;
+    position: absolute;
+    z-index: 100;
+    top: -12px;
+    left: 1rem;
+}
+
+.marqueeContainer {
+    overflow: hidden;
+    width: 75vw;
+    z-index: 100;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    height: 2rem;
+}
+
+.marqueeContainerInner {
+    position: relative;
+    display: flex;
+    z-index: 110;
+    width: fit-content;
+    p {
+        display: block;
+        font-family: "DK Hand", sans-serif;
+        font-size: 2rem;
+        color: black;
+        z-index: 120;
+        width: fit-content;
+        white-space: nowrap;
+        padding: 0 2em;
+        position: relative;
+        top: -7px;
+    }
+}
