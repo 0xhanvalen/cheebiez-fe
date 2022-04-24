@@ -162,7 +162,7 @@ export default function Home() {
                 gap: `.5rem`,
               }}
             >
-              <h2 className={styles.teamHeadline}>Who's The Team?</h2>
+              <h2 className={styles.teamHeadline}>Who&apos;s The Team?</h2>
               <br />
               <h3 className={styles.projectLeadHeadline}>Jisu</h3>
               <Image
