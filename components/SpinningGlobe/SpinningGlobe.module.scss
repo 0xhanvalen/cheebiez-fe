@@ -1,0 +1,41 @@
+.container {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+    * {
+        user-select: none;
+    }
+}
+
+.lineArt {
+    max-width: 500px;
+    ::selection {
+        background: transparent;
+    }
+}
+
+.globe {
+    position: absolute;
+    max-width: 300px;
+    aspect-ratio: 1/1;
+}
+
+.highlight {
+    position: absolute;
+    max-width: 233px;
+    aspect-ratio: 1/1;
+    transform: translateX(-30px) translateY(-32px);
+    mix-blend-mode: screen;
+    opacity: 0.5;
+}
+
+.shadow {
+    position: absolute;
+    max-width: 233px;
+    aspect-ratio: 1/1;
+    transform: translateX(0) translateY(50px);
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+}
