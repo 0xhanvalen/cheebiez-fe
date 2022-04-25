@@ -1,0 +1,22 @@
+.footerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #002669;
+    padding: 2rem;
+    z-index: 1000;
+}
+
+.footerLogo {
+    max-height: 50px;
+}
+
+.socialRow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    img {
+        max-height: 50px;
+    }
+}
+

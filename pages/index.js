@@ -5,6 +5,7 @@ import { useWallet, useENS } from "@raidguild/quiver";
 import { formatAddress } from "../utils/methods";
 import { SpinningGlobe } from "../components/SpinningGlobe/SpinningGlobe";
 import { RedNewsMarquee } from "../components/RedNewsMarquee/RedNewsMarquee";
+import {Footer} from '../components/Footer/Footer';
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
@@ -146,8 +147,7 @@ export default function Home() {
             </Box>
           </Box>
         </Box>
-        <Box
-          name="team"
+        <Box name="team"
           sx={{
             height: `100vh`,
             width: `100vw`,
@@ -185,10 +185,17 @@ export default function Home() {
             </Box>
           </Box>
         </Box>
+        <Box name="mint-garden" className={styles.mintGarden}>
+          <Image src="/images/MintSun.png" alt="The Sun" className={styles.mintSun} />
+          <Image src="/images/clouds.png" alt="Clouds" className={styles.mintClouds} />
+          <Image src="/images/FooterBush.png" alt="An applie bush" className={styles.mintBush} />
+        </Box>
+          <Footer />
       </Box>
     </>
   );
 }
+
 
 
 const TeamMember = (props) => {
@@ -200,3 +207,4 @@ const TeamMember = (props) => {
     </Box>
   )
 }
+
