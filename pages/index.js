@@ -5,7 +5,7 @@ import { useWallet, useENS } from "@raidguild/quiver";
 import { formatAddress } from "../utils/methods";
 import { SpinningGlobe } from "../components/SpinningGlobe/SpinningGlobe";
 import { RedNewsMarquee } from "../components/RedNewsMarquee/RedNewsMarquee";
-import {Footer} from '../components/Footer/Footer';
+import { Footer } from "../components/Footer/Footer";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
@@ -92,16 +92,11 @@ export default function Home() {
                 ENTER THE CHEEBIEVERSE
               </h2>
               <p className={styles.cheebieverseContent}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                efficitur purus ut urna lacinia rutrum. Donec rhoncus semper sem
-                eu efficitur. Donec a interdum arcu, a facilisis lacus. Aliquam
-                at tincidunt orci, id tristique magna. Pellentesque vehicula
-                lacus sed quam sollicitudin scelerisque. Ut suscipit finibus
-                magna quis auctor. Nam at dictum ante. Integer at tellus ornare,
-                laoreet erat ac, facilisis felis. Integer vel vestibulum justo,
-                ac viverra nunc. Duis nulla sapien, malesuada quis lacus non,
-                sollicitudin tempor eros. Maecenas ultricies eleifend varius.
-                Cras pulvinar justo at vehicula venenatis.
+                Cheebiez live in an alternate blockchain universe that mirrors
+                our own except cuter, smaller, and more mischievous. Despite the
+                chaos of their world, Cheebiez always know how to have a good
+                time. Partying and gaming are their two most popular activities,
+                and they take having fun very seriously.
               </p>
             </Box>
             <Box>
@@ -133,21 +128,19 @@ export default function Home() {
                 WHAT ARE CHEEBIEZ?
               </h2>
               <p className={styles.whatAreCheebiezContent}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                efficitur purus ut urna lacinia rutrum. Donec rhoncus semper sem
-                eu efficitur. Donec a interdum arcu, a facilisis lacus. Aliquam
-                at tincidunt orci, id tristique magna. Pellentesque vehicula
-                lacus sed quam sollicitudin scelerisque. Ut suscipit finibus
-                magna quis auctor. Nam at dictum ante. Integer at tellus ornare,
-                laoreet erat ac, facilisis felis. Integer vel vestibulum justo,
-                ac viverra nunc. Duis nulla sapien, malesuada quis lacus non,
-                sollicitudin tempor eros. Maecenas ultricies eleifend varius.
-                Cras pulvinar justo at vehicula venenatis.
+                Perhaps the better question is, what aren&apos;t Cheebiez?<br /> They&apos;re
+                everything and anything you can imagine. Their world is full of
+                fun surprises, and a variety of species and characters. They
+                have a common belief that life is meant to be lived to the
+                fullest, at all times. Once reaching adulthood, Cheebiez no
+                longer age, and if they can avoid any accidents can technically
+                live forever.
               </p>
             </Box>
           </Box>
         </Box>
-        <Box name="team"
+        <Box
+          name="team"
           sx={{
             height: `100vh`,
             width: `100vw`,
@@ -173,38 +166,87 @@ export default function Home() {
               <h4 className={styles.projectLeadRole}>creator</h4>
             </Box>
             <Box className={styles.teamGrid}>
-              <TeamMember name="Dinfo" role="founder" src="/images/TeamIcons/Dinfo.png" />
-              <TeamMember name="Pooky" role="biz Ops" src="/images/TeamIcons/Pooky.png" />
-              <TeamMember name="Ofu" role="community" src="/images/TeamIcons/Ofu.png" />
-              <TeamMember name="han valen" role="developer" src="/images/TeamIcons/Han.png" />
-              <TeamMember name="degeneroach" role="pm" src="/images/TeamIcons/Degeneroach.png" />
-              <TeamMember name="wongstongs" role="marketing" src="/images/TeamIcons/Wongs.png" />
-              <TeamMember name="photonic" role="community lead" src="/images/TeamIcons/Photonic.png" />
-              <TeamMember name="kyle" role="smart contracts" src="/images/TeamIcons/Kyle.png" />
-              <TeamMember name="tarolg" role="da whale" src="/images/TeamIcons/Tarolg.png" />
+              <TeamMember
+                name="Dinfo"
+                role="founder"
+                src="/images/TeamIcons/Dinfo.png"
+              />
+              <TeamMember
+                name="Pooky"
+                role="biz Ops"
+                src="/images/TeamIcons/Pooky.png"
+              />
+              <TeamMember
+                name="Ofu"
+                role="community"
+                src="/images/TeamIcons/Ofu.png"
+              />
+              <TeamMember
+                name="han valen"
+                role="developer"
+                src="/images/TeamIcons/Han.png"
+              />
+              <TeamMember
+                name="degeneroach"
+                role="pm"
+                src="/images/TeamIcons/Degeneroach.png"
+              />
+              <TeamMember
+                name="wongstongs"
+                role="marketing"
+                src="/images/TeamIcons/Wongs.png"
+              />
+              <TeamMember
+                name="photonic"
+                role="community lead"
+                src="/images/TeamIcons/Photonic.png"
+              />
+              <TeamMember
+                name="kyle"
+                role="smart contracts"
+                src="/images/TeamIcons/Kyle.png"
+              />
+              <TeamMember
+                name="tarolg"
+                role="da whale"
+                src="/images/TeamIcons/Tarolg.png"
+              />
             </Box>
           </Box>
         </Box>
         <Box name="mint-garden" className={styles.mintGarden}>
-          <Image src="/images/MintSun.png" alt="The Sun" className={styles.mintSun} />
-          <Image src="/images/clouds.png" alt="Clouds" className={styles.mintClouds} />
-          <Image src="/images/FooterBush.png" alt="An applie bush" className={styles.mintBush} />
+          <Image
+            src="/images/MintSun.png"
+            alt="The Sun"
+            className={styles.mintSun}
+          />
+          <Image
+            src="/images/clouds.png"
+            alt="Clouds"
+            className={styles.mintClouds}
+          />
+          <Image
+            src="/images/FooterBush.png"
+            alt="An applie bush"
+            className={styles.mintBush}
+          />
         </Box>
-          <Footer />
+        <Footer />
       </Box>
     </>
   );
 }
 
-
-
 const TeamMember = (props) => {
   return (
     <Box className={styles.teamMemberCard}>
       <h2 className={styles.teamMemberName}>{props?.name}</h2>
-      <Image src={props?.src} alt={`${props?.name}!!!!`} className={styles?.teamMemberImage} />
+      <Image
+        src={props?.src}
+        alt={`${props?.name}!!!!`}
+        className={styles?.teamMemberImage}
+      />
       <h3 className={styles.teamMemberRole}>{props?.role}</h3>
     </Box>
-  )
-}
-
+  );
+};
