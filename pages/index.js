@@ -128,13 +128,13 @@ export default function Home() {
                 WHAT ARE CHEEBIEZ?
               </h2>
               <p className={styles.whatAreCheebiezContent}>
-                Perhaps the better question is, what aren&apos;t Cheebiez?<br /> They&apos;re
-                everything and anything you can imagine. Their world is full of
-                fun surprises, and a variety of species and characters. They
-                have a common belief that life is meant to be lived to the
-                fullest, at all times. Once reaching adulthood, Cheebiez no
-                longer age, and if they can avoid any accidents can technically
-                live forever.
+                Perhaps the better question is, what aren&apos;t Cheebiez?
+                <br /> They&apos;re everything and anything you can imagine.
+                Their world is full of fun surprises, and a variety of species
+                and characters. They have a common belief that life is meant to
+                be lived to the fullest, at all times. Once reaching adulthood,
+                Cheebiez no longer age, and if they can avoid any accidents can
+                technically live forever.
               </p>
             </Box>
           </Box>

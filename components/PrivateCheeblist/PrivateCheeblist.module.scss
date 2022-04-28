@@ -1,0 +1,62 @@
+.cheeblistWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: auto;
+    font-family: 'DK Hand', sans-serif;
+    h2 {
+        color: pink;
+        font-size: 6rem;
+        font-family: 'Wildside', sans-serif;
+        text-align: center;
+        line-height: .7;
+    }
+    p {
+        color: white;
+        font-size: 3rem;
+        text-align: center;
+        line-height: .8;
+        padding: 1ex;
+        margin: 1ex;
+        &.error {
+            color: red;
+            background: black;
+            padding: 1ex;
+        }
+        &.ps {
+            font-size: 2rem;
+            margin: 0;
+            a {
+                color: rgba(255,200,250,1);
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+    }
+    input {
+        font-size: 2rem;
+        background: white;
+        margin: .5ex auto; 
+    }
+    label {
+        font-size: 2rem;
+        margin: 0;
+        color: white;
+    }
+    button {
+        font-size: 2rem;
+        padding: 2ex 2em;
+        margin: 0 auto;
+        &:hover {
+            background: pink;
+            box-shadow: 0px 0px 5px rosybrown;
+        }
+    }
+}
