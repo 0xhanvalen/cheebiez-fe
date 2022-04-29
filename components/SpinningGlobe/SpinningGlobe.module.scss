@@ -7,6 +7,9 @@
     * {
         user-select: none;
     }
+    @media screen and (max-width: 500px) {
+        height: 60vh;
+    }
 }
 
 .lineArt {
@@ -17,6 +20,9 @@
     @media screen and (min-width: 1100px) {
         max-width: 50vw;
     }
+    @media screen and (max-width: 500px) {
+        max-width: 47vw;
+    }
 }
 
 .globe {
@@ -25,6 +31,9 @@
     aspect-ratio: 1/1;
     @media screen and (min-width: 1100px) {
         max-width: 50vw;
+    }
+    @media screen and (max-width: 500px) {
+        max-width: 30vw;
     }
 }
 
@@ -39,6 +48,10 @@
         max-width: 56vw;
         transform: translateX(-50px) translateY(-32px);
     }
+    @media screen and (max-width: 500px) {
+        transform: translateX(-20%) translateY(-20%);
+        max-width: 20vw;
+    }
 }
 
 .shadow {
@@ -51,5 +64,9 @@
     @media screen and (min-width: 1100px) {
         max-width: 56vw;
         transform: translateX(0) translateY(135px);
+    }
+    @media screen and (max-width: 500px) {
+        max-width: 20vw;
+        transform: translateX(0) translateY(27.5%);
     }
 }

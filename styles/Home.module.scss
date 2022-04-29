@@ -7,6 +7,14 @@
   position: relative;
 }
 
+.heroContainer {
+  height: 100vh;
+  width: 100vw;
+  @media screen and (max-width: 500px) {
+    height: 60vh;
+  }
+}
+
 .siteLogo {
   position: absolute;
   z-index: 120;
@@ -14,6 +22,9 @@
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
   max-width: 750px;
+  @media screen and (max-width: 500px) {
+    max-width: 40vw;
+}
 }
 
 .connectButton {
@@ -73,6 +84,9 @@
   grid-template-columns: 1fr 1fr;
   place-items: center;
   height: 100%;
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .cheebieverseHeadline {
@@ -82,6 +96,12 @@
   line-height: 1;
   text-align: center;
   transform: rotate(-5deg);
+  @media screen and (max-width: 500px) {
+    font-size: 3.66rem;
+    max-width: 90vw;
+    margin: 0 auto;
+    transform: translateX(0%);
+  }
 }
 
 .cheebieverseContent {
@@ -92,15 +112,38 @@
   text-align: center;
   transform: translateX(35%) rotate(-5deg);
   max-width: 50ch;
+  @media screen and (max-width: 500px) {
+    font-size: 1.66rem;
+    max-width: 85vw;
+    margin: 0 auto;
+    transform: translateX(0%);
+  }
 }
 
 .cheebieApple {
   max-width: 70%;
-  transform: translateX(100px)
+  transform: translateX(100px);
+  @media screen and (max-width: 500px) {
+    max-width: 70vw;
+    margin: 0 auto;
+    transform: translateX(0%);
+  }
+}
+
+
+.cloudOne {
+  height: 15rem;
+  @media screen and (max-width: 500px) {
+    height: 10vh;
+  }
 }
 
 .cheebieAugustus {
   max-width: 80%;
+  @media screen and (max-width: 500px) {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
 }
 
 .whatAreCheebiezHeadline {
@@ -110,6 +153,12 @@
   line-height: 1;
   text-align: center;
   transform: rotate(5deg);
+  @media screen and (max-width: 500px) {
+    font-size: 3.66rem;
+    max-width: 90vw;
+    margin: 0 auto;
+    transform: translateX(0%);
+  }
 }
 
 .whatAreCheebiezContent {
@@ -120,6 +169,40 @@
   text-align: center;
   transform: translateX(22%) rotate(5deg);
   max-width: 50ch;
+  @media screen and (max-width: 500px) {
+    font-size: 1.66rem;
+    max-width: 85vw;
+    margin: 0 auto;
+    transform: translateX(0%);
+  }
+}
+
+.cloudTwo {
+  height: 15rem;
+  @media screen and (max-width: 500px) {
+    height: 10vh;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+.cloudThree {
+  height: 15rem;
+  @media screen and (max-width: 500px) {
+    height: 10vh;
+  }
+}
+
+.teamContainerGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  position: relative;
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+    max-width: 80vw;
+    margin: 0 auto;
+    height: fit-content;
+  }
 }
 
 .teamHeadline {
@@ -129,6 +212,12 @@
   line-height: 1;
   text-align: center;
   max-width: 10ch;
+  @media screen and (max-width: 500px) {
+    font-size: 3.66rem;
+    max-width: 90vw;
+    margin: 0 auto;
+    transform: translateX(0%);
+  }
 }
 
 .projectLeadHeadline {
@@ -142,6 +231,9 @@
 .projectLeadIcon {
   max-width: 17.5vw;
   aspect-ratio: 1/1;
+  @media screen and (max-width: 500px) {
+    max-width: 45vw;
+  }
 }
 
 .projectLeadRole {
@@ -155,6 +247,11 @@
   place-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr 1fr;
+    max-width: 80vw;
+    height: fit-content;
+  }
 }
 
 .teamMemberCard {
@@ -169,11 +266,17 @@
   font-family: "Wildside", sans-serif;
   line-height: 1;
   text-align: center;
+  @media screen and (max-width: 500px) {
+    font-size: 1rem;
+  }
 }
 
 .teamMemberImage {
   max-width: 66%;
   aspect-ratio: 1/1;
+  @media screen and (max-width: 500px) {
+    max-width: 50%;
+  }
 }
 
 .teamMemberRole {

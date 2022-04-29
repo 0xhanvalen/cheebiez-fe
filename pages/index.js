@@ -23,16 +23,15 @@ export default function Home() {
       <Head>
         <title>COMING SOON | Cheebiez</title>
       </Head>
-      <Box sx={{ backgroundColor: `#2595e3` }}>
+      <Box sx={{ backgroundColor: `#2595e3`, }}>
         <Box
           name="hero"
           sx={{
             background: `rgb(32,74,166)`,
             background: `linear-gradient(180deg, rgba(32,74,166,1) 0%, rgba(32,74,166,0) 100%)`,
             position: `relative`,
-            height: `100vh`,
-            width: `100vw`,
           }}
+          className={styles.heroContainer}
         >
           <SpinningGlobe />
           <Box className={styles.nav}>
@@ -121,8 +120,8 @@ export default function Home() {
             position: `absolute`,
             right: `0`,
             transform: `translateY(-25%)`,
-            height: `15rem`,
           }}
+          className={styles.cloudOne}
         />
         <br />
         <Box
@@ -164,8 +163,8 @@ export default function Home() {
             position: `absolute`,
             left: `0`,
             transform: `translateY(-25%)`,
-            height: `12.5rem`,
           }}
+          className={styles.cloudTwo}
         />
         <Image
           src="/images/Cloud3.png"
@@ -174,8 +173,8 @@ export default function Home() {
             position: `absolute`,
             right: `0`,
             transform: `translateY(-25%)`,
-            height: `8rem`,
           }}
+          className={styles.cloudThree}
         />
         <br />
         <br />
@@ -188,7 +187,7 @@ export default function Home() {
             width: `100vw`,
           }}
         >
-          <Box className={styles.enterCheebieverseGrid}>
+          <Box className={styles.teamContainerGrid}>
             <Box
               sx={{
                 display: `flex`,

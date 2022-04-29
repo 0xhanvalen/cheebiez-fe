@@ -1,6 +1,9 @@
 .container {
     position: absolute;
     top: 90vh;
+    @media screen and (max-width: 500px) {
+        display: none;
+    }
 }
 
 .newsbanner {
