@@ -16,6 +16,9 @@
     z-index: 100;
     top: -12px;
     left: 1rem;
+    @media screen and (min-width: 1100px) {
+        top: -3px;
+    }
 }
 
 .marqueeContainer {
@@ -44,5 +47,8 @@
         padding: 0 2em;
         position: relative;
         top: -7px;
+        @media screen and (min-width: 1100px) {
+            top: -0px;
+        }
     }
 }
