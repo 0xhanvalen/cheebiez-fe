@@ -327,7 +327,7 @@ export default function Home() {
             <Box className={styles.roadMapContent}>
               <h3>ROADMAP</h3>
               <p>
-                Cheebiez are notoriously impuslive and aren't exactly the best
+                Cheebiez are notoriously impuslive and aren&apos;t exactly the best
                 planners - but their mischief always means fun!
               </p>
               <h4>What could happen next?</h4>
