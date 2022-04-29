@@ -29,6 +29,9 @@
     top: 15px;
     right: 20px;
     height: 2rem;
+    @media screen and (min-width: 1100px) {
+        top: 22px;
+    }
 }
 
 .marqueeContainerInner {
@@ -47,8 +50,5 @@
         padding: 0 2em;
         position: relative;
         top: -7px;
-        @media screen and (min-width: 1100px) {
-            top: -0px;
-        }
     }
 }

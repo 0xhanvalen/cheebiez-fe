@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
+import Link from "next/link";
 import { Box, Image } from "@chakra-ui/react";
 import { useWallet, useENS } from "@raidguild/quiver";
 import { formatAddress } from "../utils/methods";
@@ -16,7 +17,7 @@ export default function Home() {
   }, [address]);
   const { ens, avatar, loading: loadingENS } = useENS({ address });
   const isMinting = false;
-  
+
   return (
     <>
       <Head>
@@ -49,21 +50,24 @@ export default function Home() {
               </Box>
             )}
             <Box sx={{ display: `flex`, alignItems: `center`, gap: `1rem` }}>
-              <Image
-                src="/images/Social_Discord.png"
-                alt=""
-                className={styles.socialButton}
-              />
-              <Image
-                src="/images/Social_Instagram.png"
-                alt=""
-                className={styles.socialButton}
-              />
-              <Image
-                src="/images/Social_Twitter.png"
-                alt=""
-                className={styles.socialButton}
-              />
+              <Link href="https://discord.gg/cheebiez">
+                <a>
+                  <Image
+                    src="/images/Social_Discord.png"
+                    alt=""
+                    className={styles.socialButton}
+                  />
+                </a>
+              </Link>
+              <Link href="https://twitter.com/CheebieVerse">
+                <a>
+                  <Image
+                    src="/images/Social_Twitter.png"
+                    alt=""
+                    className={styles.socialButton}
+                  />
+                </a>
+              </Link>
               {isMinting && (
                 <Image
                   src="/images/MINT.png"
@@ -110,7 +114,16 @@ export default function Home() {
           </Box>
         </Box>
         <br />
-        <Image src="/images/CLOUD1.png" alt="" sx={{position: `absolute`, right: `0`, transform: `translateY(-25%)`, height: `15rem`}}/>
+        <Image
+          src="/images/CLOUD1.png"
+          alt=""
+          sx={{
+            position: `absolute`,
+            right: `0`,
+            transform: `translateY(-25%)`,
+            height: `15rem`,
+          }}
+        />
         <br />
         <Box
           name="what are cheebiez"
@@ -144,8 +157,26 @@ export default function Home() {
           </Box>
         </Box>
         <br />
-        <Image src="/images/Cloud2.png" alt="" sx={{position: `absolute`, left: `0`, transform: `translateY(-25%)`, height: `12.5rem`}}/>
-        <Image src="/images/Cloud3.png" alt="" sx={{position: `absolute`, right: `0`, transform: `translateY(-25%)`, height: `8rem`}}/>
+        <Image
+          src="/images/Cloud2.png"
+          alt=""
+          sx={{
+            position: `absolute`,
+            left: `0`,
+            transform: `translateY(-25%)`,
+            height: `12.5rem`,
+          }}
+        />
+        <Image
+          src="/images/Cloud3.png"
+          alt=""
+          sx={{
+            position: `absolute`,
+            right: `0`,
+            transform: `translateY(-25%)`,
+            height: `8rem`,
+          }}
+        />
         <br />
         <br />
         <br />
@@ -229,26 +260,81 @@ export default function Home() {
         <br />
         <br />
         <Box name="roadmap" className={styles.roadmapContainer}>
-              <Image src="/images/breaking_news_button.png" alt="Breaking News" sx={{position: `absolute`, width: `600px`, transform: `translateY(-50%)`}}/>
-              <Image src="/images/ReporterBee.png" alt="Newzy Bee" sx={{position: `absolute`, width: `500px`, bottom: `0`, right: `0`, transform: `translateY(-15%)`}}/>
-              <Image src="/images/news_desk.png" alt="Newzy Bee's Desk" sx={{position: `absolute`, width: `800px`, bottom: `0`, right: `0`}}/>
-              <Image src="/images/news_desk.png" alt="Newzy Bee's Desk" sx={{position: `absolute`, width: `800px`, bottom: `0`, right: `0`}}/>
-              <Box className={styles.roadmapInnerGrid}>
-                <Box className={styles.roadmapItems}>
-                  <Image src="/images/questionMarkBubble.png" alt="?" sx={{maxWidth: `300px`}}/>
-                  <Box className={styles.roadmapSmallItems}>
-                    <Image src="/images/questionMarkBubbleSmall.png" alt="?" sx={{maxWidth: `100px`}}/>
-                    <Image src="/images/questionMarkBubbleSmall.png" alt="?" sx={{maxWidth: `100px`}}/>
-                    <Image src="/images/questionMarkBubbleSmall.png" alt="?" sx={{maxWidth: `100px`}}/>
-                  </Box>
-                </Box>
-                <Box className={styles.roadMapContent}>
-                  <h3>ROADMAP</h3>
-                  <p>Cheebiez are notoriously impuslive and aren't exactly the best planners - but their mischief always means fun!</p>
-                  <h4>What could happen next?</h4>
-                  <br />
-                </Box>
+          <Image
+            src="/images/breaking_news_button.png"
+            alt="Breaking News"
+            sx={{
+              position: `absolute`,
+              width: `600px`,
+              transform: `translateY(-50%)`,
+            }}
+          />
+          <Image
+            src="/images/ReporterBee.png"
+            alt="Newzy Bee"
+            sx={{
+              position: `absolute`,
+              width: `500px`,
+              bottom: `0`,
+              right: `0`,
+              transform: `translateY(-15%)`,
+            }}
+          />
+          <Image
+            src="/images/news_desk.png"
+            alt="Newzy Bee's Desk"
+            sx={{
+              position: `absolute`,
+              width: `800px`,
+              bottom: `0`,
+              right: `0`,
+            }}
+          />
+          <Image
+            src="/images/news_desk.png"
+            alt="Newzy Bee's Desk"
+            sx={{
+              position: `absolute`,
+              width: `800px`,
+              bottom: `0`,
+              right: `0`,
+            }}
+          />
+          <Box className={styles.roadmapInnerGrid}>
+            <Box className={styles.roadmapItems}>
+              <Image
+                src="/images/questionMarkBubble.png"
+                alt="?"
+                sx={{ maxWidth: `300px` }}
+              />
+              <Box className={styles.roadmapSmallItems}>
+                <Image
+                  src="/images/questionMarkBubbleSmall.png"
+                  alt="?"
+                  sx={{ maxWidth: `100px` }}
+                />
+                <Image
+                  src="/images/questionMarkBubbleSmall.png"
+                  alt="?"
+                  sx={{ maxWidth: `100px` }}
+                />
+                <Image
+                  src="/images/questionMarkBubbleSmall.png"
+                  alt="?"
+                  sx={{ maxWidth: `100px` }}
+                />
               </Box>
+            </Box>
+            <Box className={styles.roadMapContent}>
+              <h3>ROADMAP</h3>
+              <p>
+                Cheebiez are notoriously impuslive and aren't exactly the best
+                planners - but their mischief always means fun!
+              </p>
+              <h4>What could happen next?</h4>
+              <br />
+            </Box>
+          </Box>
         </Box>
         <Box name="mint-garden" className={styles.mintGarden}>
           <Image

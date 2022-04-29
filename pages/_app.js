@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import { NetworkConfig, WalletProvider } from '@raidguild/quiver'
 import WalletConnectProvider from '@walletconnect/web3-provider'
 import { ChakraProvider } from "@chakra-ui/react";
+import Head from 'next/head';
 
 const SUPPORTED_NETWORKS = {
   '0x1': {
@@ -60,6 +61,9 @@ function MyApp({ Component, pageProps }) {
         console.log({eventName});
       }}
       >
+        <Head>
+          <link rel="icon" type="image/png" href="/images/CheebieApple.png"/>
+        </Head>
       <Component {...pageProps} />
       </WalletProvider>
     </ChakraProvider>

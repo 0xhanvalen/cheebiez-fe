@@ -81,7 +81,7 @@
   font-family: "Wildside", sans-serif;
   line-height: 1;
   text-align: center;
-  transform: rotate(-15deg);
+  transform: rotate(-5deg);
 }
 
 .cheebieverseContent {
@@ -90,7 +90,8 @@
   font-family: "DK Hand", sans-serif;
   line-height: 1.2;
   text-align: center;
-  transform: translateX(80px) rotate(-15deg);
+  transform: translateX(35%) rotate(-5deg);
+  max-width: 50ch;
 }
 
 .cheebieApple {
@@ -108,7 +109,7 @@
   font-family: "Wildside", sans-serif;
   line-height: 1;
   text-align: center;
-  transform: rotate(15deg);
+  transform: rotate(5deg);
 }
 
 .whatAreCheebiezContent {
@@ -117,7 +118,8 @@
   font-family: "DK Hand", sans-serif;
   line-height: 1.2;
   text-align: center;
-  transform: translateX(-80px) rotate(15deg);
+  transform: translateX(22%) rotate(5deg);
+  max-width: 50ch;
 }
 
 .teamHeadline {
