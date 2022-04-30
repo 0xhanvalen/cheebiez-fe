@@ -15,18 +15,6 @@
   }
 }
 
-.siteLogo {
-  position: absolute;
-  z-index: 2;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  max-width: 750px;
-  @media screen and (max-width: 500px) {
-    max-width: 40vw;
-}
-}
-
 .connectButton {
   background: white;
   border-radius: 500px;

@@ -84,6 +84,12 @@ export const SpinningGlobe = () => {
           alt=""
           draggable="false"
         />
+        <Image
+          className={styles.siteLogo}
+          src="/images/GlobeAssets/Logo-01.png"
+          alt=""
+          draggable="false"
+        />
       </Box>
     </>
   );

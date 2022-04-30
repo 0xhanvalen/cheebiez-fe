@@ -76,11 +76,6 @@ export default function Home() {
               )}
             </Box>
           </Box>
-          <Image
-            src="/images/Cheebz_Website_Logo.png"
-            alt="CHEEBIEZ"
-            className={styles.siteLogo}
-          />
           <RedNewsMarquee />
         </Box>
         <Box
