@@ -32,9 +32,18 @@ export const RedNewsMarquee = (props) => {
       />
       <h3 className={styles.headline}>BREAKING</h3>
       <div className={styles.marqueeContainer}>
-        <Box as={motion.div} animation={newsStorynimation} className={styles.marqueeContainerInner}>
+        <Box
+          as={motion.div}
+          animation={newsStorynimation}
+          className={styles.marqueeContainerInner}
+        >
           {newsStories.map((story, index) => {
-            return <p key={`stories-${index}`}>{story}</p>;
+            return (
+              <>
+                <p key={`stories-${index}`}>{story}</p>
+                <p key={`pipe-${index}`}>|</p>
+              </>
+            );
           })}
         </Box>
       </div>

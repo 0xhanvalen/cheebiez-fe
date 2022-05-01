@@ -1,4 +1,5 @@
 $scene-width: 50vw;
+$laptop-scene-width: 90vw;
 @media screen and (max-width: 720px) {
     $scene-width: 80vw;
 }
@@ -24,12 +25,18 @@ $scene-width: 50vw;
     ::selection {
         background: transparent;
     }
+    @media screen and (max-width: 1100px) {
+        width: $laptop-scene-width;
+    }
 }
 
 .globe {
     position: absolute;
     aspect-ratio: 1/1;
     width: $scene-width;
+    @media screen and (max-width: 1100px) {
+        width: $laptop-scene-width;
+    }
 }
 
 .highlight {
@@ -38,6 +45,9 @@ $scene-width: 50vw;
     mix-blend-mode: screen;
     opacity: 0.5;
     width: $scene-width;
+    @media screen and (max-width: 1100px) {
+        width: $laptop-scene-width;
+    }
 }
 
 .shadow {
@@ -46,24 +56,36 @@ $scene-width: 50vw;
     mix-blend-mode: multiply;
     opacity: 0.5;
     width: $scene-width;
+    @media screen and (max-width: 1100px) {
+        width: $laptop-scene-width;
+    }
 }
 
 .atmosphere {
     position: absolute;
     aspect-ratio: 1/1;
     width: $scene-width;
+    @media screen and (max-width: 1100px) {
+        width: $laptop-scene-width;
+    }
 }
 
 .cheebiez {
     position: absolute;
     aspect-ratio: 1/1;
     width: $scene-width;
+    @media screen and (max-width: 1100px) {
+        width: $laptop-scene-width;
+    }
 }
 
 .clouds {
     position: absolute;
     aspect-ratio: 1/1;
     width: $scene-width;
+    @media screen and (max-width: 1100px) {
+        width: $laptop-scene-width;
+    }
 }
 
 .siteLogo {
@@ -72,4 +94,7 @@ $scene-width: 50vw;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
     width: $scene-width;
+    @media screen and (max-width: 1100px) {
+        width: $laptop-scene-width;
+    }
   }

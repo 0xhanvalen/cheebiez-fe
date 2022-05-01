@@ -10,8 +10,8 @@
 .heroContainer {
   height: 100vh;
   width: 100vw;
-  @media screen and (max-width: 500px) {
-    height: 60vh;
+  @media screen and (max-width: 1100px) {
+    height: 100vh;
   }
 }
 
@@ -72,8 +72,11 @@
   grid-template-columns: 1fr 1fr;
   place-items: center;
   height: 100%;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1100px) {
     grid-template-columns: 1fr;
+    grid-gap: 0rem;
+    height: auto;
+    margin-top: 4rem;
   }
 }
 
@@ -84,7 +87,7 @@
   line-height: 1;
   text-align: center;
   transform: rotate(-5deg);
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1100px) {
     font-size: 3.66rem;
     max-width: 90vw;
     margin: 0 auto;
@@ -100,19 +103,21 @@
   text-align: center;
   transform: translateX(35%) rotate(-5deg);
   max-width: 50ch;
-  @media screen and (max-width: 500px) {
-    font-size: 1.66rem;
-    max-width: 85vw;
-    margin: 0 auto;
+  @media screen and (max-width: 1100px) {
+    max-width: 40ch;
+    margin: 2rem auto;
     transform: translateX(0%);
+  }
+  @media screen and (max-width: 700px) {
+    font-size: 1.66rem;
   }
 }
 
 .cheebieApple {
   max-width: 70%;
   transform: translateX(100px);
-  @media screen and (max-width: 500px) {
-    max-width: 70vw;
+  @media screen and (max-width: 1100px) {
+    max-width: 33vw;
     margin: 0 auto;
     transform: translateX(0%);
   }
@@ -121,17 +126,23 @@
 
 .cloudOne {
   height: 15rem;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1100px) {
     height: 10vh;
   }
 }
 
+
 .cheebieAugustus {
   max-width: 80%;
-  @media screen and (max-width: 500px) {
-    max-width: 80vw;
+  @media screen and (max-width: 1100px) {
+    max-width: 33vw;
     margin: 0 auto;
+    order: 1;
   }
+}
+
+.whatAreCheebiezContentContainer {
+  order: -1;
 }
 
 .whatAreCheebiezHeadline {
@@ -141,7 +152,7 @@
   line-height: 1;
   text-align: center;
   transform: rotate(5deg);
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1100px) {
     font-size: 3.66rem;
     max-width: 90vw;
     margin: 0 auto;
@@ -157,17 +168,19 @@
   text-align: center;
   transform: translateX(22%) rotate(5deg);
   max-width: 50ch;
-  @media screen and (max-width: 500px) {
-    font-size: 1.66rem;
-    max-width: 85vw;
-    margin: 0 auto;
+  @media screen and (max-width: 1100px) {
+    max-width: 40ch;
+    margin: 2rem auto;
     transform: translateX(0%);
+  }
+  @media screen and (max-width: 700px) {
+    font-size: 1.66rem;
   }
 }
 
 .cloudTwo {
   height: 15rem;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1100px) {
     height: 10vh;
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -175,7 +188,7 @@
 }
 .cloudThree {
   height: 15rem;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1100px) {
     height: 10vh;
   }
 }
@@ -185,7 +198,8 @@
   grid-template-columns: 1fr 1fr;
   place-items: center;
   position: relative;
-  @media screen and (max-width: 500px) {
+  margin-top: 12rem;
+  @media screen and (max-width: 1100px) {
     grid-template-columns: 1fr;
     max-width: 80vw;
     margin: 0 auto;
@@ -200,11 +214,21 @@
   line-height: 1;
   text-align: center;
   max-width: 10ch;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1100px) {
     font-size: 3.66rem;
     max-width: 90vw;
     margin: 0 auto;
     transform: translateX(0%);
+  }
+}
+
+.projectLeadContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  @media screen and (max-width: 1100px) {
+    margin-bottom: 2rem;
   }
 }
 
@@ -214,13 +238,16 @@
   font-family: "Wildside", sans-serif;
   line-height: 1;
   text-align: center;
+  @media screen and (max-width: 1100px) {
+    font-size: 6vh;
+  }
 }
 
 .projectLeadIcon {
   max-width: 17.5vw;
   aspect-ratio: 1/1;
-  @media screen and (max-width: 500px) {
-    max-width: 45vw;
+  @media screen and (max-width: 1100px) {
+    max-width: 33vw;
   }
 }
 
@@ -228,6 +255,9 @@
   color: white;
   font-family: "DK Hand", sans-serif;
   font-size: 2rem;
+  @media screen and (max-width: 1100px) {
+    font-size: 4vh;
+  }
 }
 
 .teamGrid {
@@ -235,10 +265,17 @@
   place-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1100px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 80vw;
+    height: fit-content;
+    margin-bottom: 8rem;
+  }
+  @media screen and (max-width: 650px) {
     grid-template-columns: 1fr 1fr;
     max-width: 80vw;
     height: fit-content;
+
   }
 }
 
@@ -254,16 +291,19 @@
   font-family: "Wildside", sans-serif;
   line-height: 1;
   text-align: center;
-  @media screen and (max-width: 500px) {
-    font-size: 1rem;
+  @media screen and (max-width: 1100px) {
+    order: 1;
+    font-size: 2rem;
+    margin: .5ex auto;
   }
 }
 
 .teamMemberImage {
   max-width: 66%;
   aspect-ratio: 1/1;
-  @media screen and (max-width: 500px) {
-    max-width: 50%;
+  @media screen and (max-width: 1100px) {
+    order: 0;
+    max-width: 80%;
   }
 }
 
@@ -272,6 +312,11 @@
   font-family: "DK Hand", sans-serif;
   font-size: 1.77rem;
   text-transform: lowercase;
+  @media screen and (max-width: 1100px) {
+    order: 2;
+    line-height: 1;
+    margin-top: -1ex;
+  }
 }
 
 .mintGarden {
@@ -304,10 +349,56 @@
   background-color: #4bc6ff;
   position: relative;
   min-height: 90vh;
+  @media screen and (max-width: 1500px) {
+    min-height: 120vh;
+  }
+}
+
+.breakingNewsButton {
+  position: absolute;
+  width: 600px;
+  transform: translateY(-50%);
+  @media screen and (max-width: 1100px) {
+    width: 60vw;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+}
+
+.newzyBeeDesktop {
+  position: absolute;
+  width: 500px;
+  bottom: 0;
+  right: 0;
+  transform: translateY(-15%);
+  @media screen and (max-width: 1100px) {
+    display: none;
+  }
+}
+
+.newzyBeeDesktopDesk {
+  position: absolute;
+  width: 800px;
+  bottom: 0;
+  right: 0;
+  @media screen and (max-width: 1100px) {
+    display: none;
+  }
+}
+
+.newzyBeeMobile {
+  position: absolute;
+  width: 800px;
+  bottom: 0;
+  right: 0;
+  @media screen and (min-width: 1100px) {
+    display: none;
+  }
 }
 
 .roadmapInnerGrid {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   padding: 2rem;
   gap: 2rem;
   padding-top: 5rem;
@@ -316,12 +407,19 @@
     padding-left: 10vw;
     gap: 5vw;
   }
+  @media screen and (max-width: 1100px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .roadmapItems {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-width: 1100px) {
+    margin: 0 auto;
+    order: 1;
+  }
   .roadmapSmallItems {
     margin-top: 1rem;
     display: flex;
@@ -333,8 +431,12 @@
 .roadMapContent {
   color: white;
   display: flex;
-  flex-direction: column;;
+  flex-direction: column;
   justify-content: space-between;
+  @media screen and (max-width: 1100px) {
+    margin: 0 auto;
+    align-items: center;
+  }
   h3 {
     font-family: 'Wildside', sans-serif;
     font-size: 6rem;
@@ -363,6 +465,16 @@
     }
     h4 {
       font-size: 7.5vh;
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    p {
+      font-size: 3rem;
+      text-align: center;
+      line-height: 1;
+    }
+    h4 {
+      display: none;
     }
   }
 }

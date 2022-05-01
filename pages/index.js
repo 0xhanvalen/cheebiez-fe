@@ -23,7 +23,7 @@ export default function Home() {
       <Head>
         <title>COMING SOON | Cheebiez</title>
       </Head>
-      <Box sx={{ backgroundColor: `#2595e3`, }}>
+      <Box sx={{ backgroundColor: `#2595e3` }}>
         <Box
           name="hero"
           sx={{
@@ -81,7 +81,6 @@ export default function Home() {
         <Box
           name="enter the cheebieverse"
           sx={{
-            height: `100vh`,
             width: `100vw`,
           }}
         >
@@ -91,11 +90,10 @@ export default function Home() {
                 ENTER THE CHEEBIEVERSE
               </h2>
               <p className={styles.cheebieverseContent}>
-                Cheebiez live in an alternate blockchain universe that mirrors
-                our own except cuter, smaller, and more mischievous. Despite the
-                chaos of their world, Cheebiez always know how to have a good
-                time. Partying and gaming are their two most popular activities,
-                and they take having fun very seriously.
+                Cheebiez live in a parallel universe that&apos;s just like our
+                own except cuter, smaller, and more fun! They have
+                infrastructure and governments to topple just like us and do so
+                with much chaos and mischief.
               </p>
             </Box>
             <Box>
@@ -122,7 +120,6 @@ export default function Home() {
         <Box
           name="what are cheebiez"
           sx={{
-            height: `100vh`,
             width: `100vw`,
           }}
         >
@@ -134,18 +131,15 @@ export default function Home() {
                 className={styles.cheebieAugustus}
               />
             </Box>
-            <Box>
+            <Box className={styles.whatAreCheebiezContentContainer}>
               <h2 className={styles.whatAreCheebiezHeadline}>
                 WHAT ARE CHEEBIEZ?
               </h2>
               <p className={styles.whatAreCheebiezContent}>
-                Perhaps the better question is, what aren&apos;t Cheebiez?
-                <br /> They&apos;re everything and anything you can imagine.
-                Their world is full of fun surprises, and a variety of species
-                and characters. They have a common belief that life is meant to
-                be lived to the fullest, at all times. Once reaching adulthood,
-                Cheebiez no longer age, and if they can avoid any accidents can
-                technically live forever.
+                Cheebiez are small creatures that mirror humans in many ways.
+                Much like us, Cheebiez have a rich history filled with its own
+                leaders and cultures! Though they speak in an unknown tongue,
+                their bold personalities make up for it more than enough.
               </p>
             </Box>
           </Box>
@@ -175,21 +169,9 @@ export default function Home() {
         <br />
         <br />
         <br />
-        <Box
-          name="team"
-          sx={{
-            height: `100vh`,
-            width: `100vw`,
-          }}
-        >
+        <Box name="team" sx={{ height: "fit-content" }}>
           <Box className={styles.teamContainerGrid}>
-            <Box
-              sx={{
-                display: `flex`,
-                flexDirection: `column`,
-                alignItems: `center`,
-                gap: `.5rem`,
-              }}
+            <Box className={styles.projectLeadContainer}
             >
               <h2 className={styles.teamHeadline}>Who&apos;s The Team?</h2>
               <br />
@@ -257,42 +239,22 @@ export default function Home() {
           <Image
             src="/images/breaking_news_button.png"
             alt="Breaking News"
-            sx={{
-              position: `absolute`,
-              width: `600px`,
-              transform: `translateY(-50%)`,
-            }}
+            className={styles.breakingNewsButton}
           />
           <Image
             src="/images/ReporterBee.png"
             alt="Newzy Bee"
-            sx={{
-              position: `absolute`,
-              width: `500px`,
-              bottom: `0`,
-              right: `0`,
-              transform: `translateY(-15%)`,
-            }}
+            className={styles.newzyBeeDesktop}
           />
           <Image
             src="/images/news_desk.png"
             alt="Newzy Bee's Desk"
-            sx={{
-              position: `absolute`,
-              width: `800px`,
-              bottom: `0`,
-              right: `0`,
-            }}
+            className={styles.newzyBeeDesktopDesk}
           />
           <Image
-            src="/images/news_desk.png"
+            src="/images/NewzyBeeMobile.png"
             alt="Newzy Bee's Desk"
-            sx={{
-              position: `absolute`,
-              width: `800px`,
-              bottom: `0`,
-              right: `0`,
-            }}
+            className={styles.newzyBeeMobile}
           />
           <Box className={styles.roadmapInnerGrid}>
             <Box className={styles.roadmapItems}>
@@ -322,8 +284,8 @@ export default function Home() {
             <Box className={styles.roadMapContent}>
               <h3>ROADMAP</h3>
               <p>
-                Cheebiez are notoriously impuslive and aren&apos;t exactly the best
-                planners - but their mischief always means fun!
+                Cheebiez are notoriously impuslive and aren&apos;t exactly the
+                best planners - but their mischief always means fun!
               </p>
               <h4>What could happen next?</h4>
               <br />
