@@ -123,7 +123,7 @@ export default function Home() {
             width: `100vw`,
           }}
         >
-          <Box className={styles.enterCheebieverseGrid}>
+          <Box className={styles.whatAreCheebiezGrid}>
             <Box>
               <Image
                 src="/images/CheebieAugustus.png"

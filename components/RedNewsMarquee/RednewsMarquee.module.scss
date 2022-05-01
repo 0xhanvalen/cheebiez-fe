@@ -1,9 +1,6 @@
 .container {
     position: absolute;
     top: 90vh;
-    @media screen and (max-width: 500px) {
-        display: none;
-    }
 }
 
 .newsbanner {
@@ -32,6 +29,10 @@
         border-radius: 0px 50px 50px 0px;
         left: 0;
     }
+    @media screen and (max-width: 500px) {
+        top: -25vh;
+        font-size: 2rem;
+    }
 }
 
 .marqueeContainer {
@@ -54,6 +55,11 @@
         width: 100vw;
         top: 45px;
     }
+    @media screen and (max-width: 500px) {
+        top: -21vh;
+        font-size: 1.33rem;
+        height: 5vh;
+    }
 }
 
 .marqueeContainerInner {
@@ -72,5 +78,8 @@
         padding: 0 .5em;
         position: relative;
         top: -7px;
+        @media screen and (max-width: 500px) {
+            font-size: 1.33rem;
+        }
     }
 }
