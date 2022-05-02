@@ -32,10 +32,9 @@
   &:hover {
     cursor: pointer;
     transform: translateY(-5px);
-    box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
   }
   user-select: none;
-
 }
 
 .socialButton {
@@ -57,7 +56,7 @@
   &:hover {
     cursor: pointer;
     transform: translateY(-5px);
-    box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
   }
   user-select: none;
 }
@@ -65,7 +64,7 @@
 .userAddress {
   background: white;
   border-radius: 500px;
-  padding: .5ex 1em;
+  padding: 0.5ex 1em;
   transition: all 0.5s;
   font-family: "DK Hand", sans-serif;
   color: #2595e3;
@@ -73,7 +72,7 @@
   &:hover {
     cursor: pointer;
     transform: translateY(-5px);
-    box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
   }
   @media screen and (max-width: 500px) {
     font-size: 1.5rem;
@@ -152,7 +151,6 @@
   }
 }
 
-
 .cloudOne {
   height: 15rem;
   @media screen and (max-width: 1100px) {
@@ -160,9 +158,9 @@
   }
 }
 
-
 .cheebieAugustus {
   max-width: 80%;
+  order: -2;
   @media screen and (max-width: 1100px) {
     max-width: 33vw;
     margin: 0 auto;
@@ -171,7 +169,10 @@
 }
 
 .whatAreCheebiezContentContainer {
-  order: -1;
+  order: 1;
+  @media screen and (max-width: 1100px) {
+    order: -1;
+  }
 }
 
 .whatAreCheebiezGrid {
@@ -282,7 +283,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .5rem;
+  gap: 0.5rem;
   @media screen and (max-width: 1100px) {
     margin-bottom: 2rem;
   }
@@ -352,7 +353,7 @@
   @media screen and (max-width: 1100px) {
     order: 1;
     font-size: 2rem;
-    margin: .5ex auto;
+    margin: 0.5ex auto;
   }
   @media screen and (max-width: 500px) {
     font-size: 1.33rem;
@@ -416,7 +417,6 @@
   max-width: 100vw;
   width: 100vw;
 }
-
 
 .roadmapContainer {
   background-color: #4bc6ff;
@@ -528,21 +528,21 @@
     align-items: center;
   }
   h3 {
-    font-family: 'Wildside', sans-serif;
+    font-family: "Wildside", sans-serif;
     font-size: 6rem;
     margin: 0;
-    line-height: .8;
+    line-height: 0.8;
   }
   p {
     margin: 1ex 0;
-    font-family: 'DK Hand', sans-serif;
+    font-family: "DK Hand", sans-serif;
     font-size: 2rem;
     max-width: 30ch;
   }
   h4 {
     margin: 0;
     line-height: 0.8;
-    font-family: 'DK Hand', sans-serif;
+    font-family: "DK Hand", sans-serif;
     font-size: 4rem;
     max-width: 45ch;
   }
@@ -569,7 +569,7 @@
   }
   @media screen and (max-width: 500px) {
     h3 {
-      font-size: 3rem;;
+      font-size: 3rem;
     }
     p {
       font-size: 1.66rem;
