@@ -1,3 +1,4 @@
+$tablet: 1400px;
 .container {
     position: absolute;
     top: 90vh;
@@ -6,7 +7,7 @@
 .newsbanner {
     width: 100vw;
     position: relative;
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: $tablet) {
         display: none;
     }
 }
@@ -19,10 +20,10 @@
     z-index: 100;
     top: -12px;
     left: 1rem;
-    @media screen and (min-width: 1100px) {
+    @media screen and (min-width: $tablet) {
         top: -3px;
     }
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: $tablet) {
         background-color: red;
         padding: 0px 25px;
         line-height: 1;
@@ -43,10 +44,10 @@
     top: 15px;
     right: 20px;
     height: 2rem;
-    @media screen and (min-width: 1100px) {
+    @media screen and (min-width: $tablet) {
         top: 22px;
     }
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: $tablet) {
         background-color: white;
         padding: 15px 25px;
         height: 50px;
