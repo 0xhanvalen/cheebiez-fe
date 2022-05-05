@@ -34,10 +34,10 @@ export const RedNewsMarquee = (props) => {
         >
           {newsStories.map((story, index) => {
             return (
-              <>
-                <p key={`stories-${index}`}>{story}</p>
-                <p key={`pipe-${index}`}>|</p>
-              </>
+              <div key={`stories-${index}`} style={{display: `flex`}}>
+                <p>{story}</p>
+                <p>|</p>
+              </div>
             );
           })}
         </Box>

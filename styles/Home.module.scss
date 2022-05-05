@@ -163,6 +163,9 @@ $tablet: 1200px;
   @media screen and (max-width: $tablet) {
     height: 10vh;
   }
+  @media screen and (max-width: 800px) {
+    height: 5vh;
+  }
 }
 
 .cheebieAugustus {
@@ -267,6 +270,9 @@ $tablet: 1200px;
     max-width: 80vw;
     margin: 0 auto;
     height: fit-content;
+  }
+  @media screen and (max-width: 700px) {
+    margin-top: 8rem;
   }
 }
 
@@ -431,11 +437,12 @@ $tablet: 1200px;
   background-color: #4bc6ff;
   position: relative;
   min-height: 90vh;
-  @media screen and (max-width: 1500px) {
-    min-height: 120vh;
+  @media screen and (min-height: 2000px) {
+    min-height: 2000px;
   }
-  @media screen and (max-width: 500px) {
-    min-height: 80vh;
+  @media screen and (max-width: 1500px) {
+    min-height: auto;
+    height: 1600px;
   }
 }
 
@@ -486,7 +493,7 @@ $tablet: 1200px;
 
 .roadmapInnerGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 3fr 9fr;
   padding: 2rem;
   gap: 2rem;
   padding-top: 5rem;

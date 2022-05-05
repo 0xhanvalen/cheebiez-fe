@@ -8,7 +8,7 @@ export const SpinningGlobe = () => {
    100% { transform: rotate(-360deg);}
    `;
 
-  const globeSpinAnimation = `${globeSpinKeyframes} 20s linear infinite`;
+  const globeSpinAnimation = `${globeSpinKeyframes} 40s linear infinite`;
 
   const lineArtSpinKeyframes = keyframes`
   0% { transform: rotate(0deg);}
@@ -21,9 +21,9 @@ export const SpinningGlobe = () => {
   100% { transform: rotate(360deg);}
   `;
 
-  const lineArtSpinAnimation = `${lineArtSpinKeyframes} 60s linear infinite`;
-  const cloudsSpinAnimation = `${lineArtSpinKeyframes} 80s linear infinite`;
-  const CheebiezAnimation = `${cheebiezSpin} 15s linear infinite`;
+  const lineArtSpinAnimation = `${lineArtSpinKeyframes} 80s linear infinite`;
+  const cloudsSpinAnimation = `${lineArtSpinKeyframes} 100s linear infinite`;
+  const CheebiezAnimation = `${cheebiezSpin} 30s linear infinite`;
 
   return (
     <>

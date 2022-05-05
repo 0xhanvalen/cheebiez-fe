@@ -9,8 +9,14 @@ import { useInjectedProvider } from "../contexts/InjectedProviderContext";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
-
-  const {address, isUpdating, connectProvider, disconnectDapp, injectedChain, injectedProvider} = useInjectedProvider();
+  const {
+    address,
+    isUpdating,
+    connectProvider,
+    disconnectDapp,
+    injectedChain,
+    injectedProvider,
+  } = useInjectedProvider();
   const isMinting = false;
 
   return (
@@ -45,7 +51,7 @@ export default function Home() {
             )}
             <Box sx={{ display: `flex`, alignItems: `center`, gap: `1rem` }}>
               <Link href="https://discord.gg/cheebiez">
-                <a>
+                <a target="_blank" rel="nofollow">
                   <Image
                     src="/images/Social_Discord.png"
                     alt=""
@@ -54,7 +60,7 @@ export default function Home() {
                 </a>
               </Link>
               <Link href="https://twitter.com/CheebieVerse">
-                <a>
+                <a target="_blank" rel="nofollow">
                   <Image
                     src="/images/Social_Twitter.png"
                     alt=""
@@ -168,8 +174,7 @@ export default function Home() {
         <br />
         <Box name="team" sx={{ height: "fit-content" }}>
           <Box className={styles.teamContainerGrid}>
-            <Box className={styles.projectLeadContainer}
-            >
+            <Box className={styles.projectLeadContainer}>
               <h2 className={styles.teamHeadline}>Who&apos;s The Team?</h2>
               <br />
               <h3 className={styles.projectLeadHeadline}>Jisu</h3>
@@ -281,7 +286,8 @@ export default function Home() {
             <Box className={styles.roadMapContent}>
               <h3>ROADMAP</h3>
               <p>
-              Cheebiez are notoriously impulsive and aren&apos;t exactly the best planners– but their mischief always means fun!
+                Cheebiez are notoriously impulsive and aren&apos;t exactly the
+                best planners– but their mischief always means fun!
               </p>
               <h4>What could happen next?</h4>
               <br />

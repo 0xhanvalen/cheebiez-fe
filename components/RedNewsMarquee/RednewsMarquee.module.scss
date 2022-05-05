@@ -1,8 +1,13 @@
 $tablet: 1400px;
+$mobile: 500px;
+
 .container {
     position: absolute;
     top: 90vh;
     display: flex;
+    @media screen and (max-width: $mobile) {
+        top: 66vh;
+    };
 }
 
 .headline {
@@ -25,9 +30,12 @@ $tablet: 1400px;
         left: 0;
         clip-path: none;
     }
-    @media screen and (max-width: 500px) {
-        top: -25vh;
+    @media screen and (max-width: $mobile) {
         font-size: 2rem;
+        padding: 8px 12.5px;
+        height: 50px;
+        transform: none;
+        bottom: 0;
     }
 }
 
@@ -50,10 +58,11 @@ $tablet: 1400px;
         width: 100vw;
         transform: translateY(40px);
     }
-    @media screen and (max-width: 500px) {
-        top: -21vh;
+    @media screen and (max-width: $mobile) {
         font-size: 1.33rem;
-        height: 5vh;
+        padding-bottom: 8px;
+        height: 60px;
+        bottom: -15px;
     }
 }
 
