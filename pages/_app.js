@@ -8,7 +8,7 @@ function Cheebiez({ Component, pageProps }) {
     <ChakraProvider>
       <InjectedProviderFC>
         <Head>
-          <link rel="icon" type="image/png" href="/images/CheebieApple.png"/>
+          <link rel="icon" type="image/png" href="/images/Apple_Favicon.png"/>
         </Head>
       <Component {...pageProps} />
       </InjectedProviderFC>

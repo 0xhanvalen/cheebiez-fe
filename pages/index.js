@@ -263,23 +263,19 @@ export default function Home() {
               <Image
                 src="/images/questionMarkBubble.png"
                 alt="?"
-                sx={{ maxWidth: `300px` }}
               />
               <Box className={styles.roadmapSmallItems}>
                 <Image
                   src="/images/questionMarkBubbleSmall.png"
                   alt="?"
-                  sx={{ maxWidth: `100px` }}
                 />
                 <Image
                   src="/images/questionMarkBubbleSmall.png"
                   alt="?"
-                  sx={{ maxWidth: `100px` }}
                 />
                 <Image
                   src="/images/questionMarkBubbleSmall.png"
                   alt="?"
-                  sx={{ maxWidth: `100px` }}
                 />
               </Box>
             </Box>
