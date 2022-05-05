@@ -2,20 +2,15 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { Box, Image } from "@chakra-ui/react";
-import { useWallet, useENS } from "@raidguild/quiver";
-import { formatAddress } from "../utils/methods";
 import { SpinningGlobe } from "../components/SpinningGlobe/SpinningGlobe";
 import { RedNewsMarquee } from "../components/RedNewsMarquee/RedNewsMarquee";
 import { Footer } from "../components/Footer/Footer";
+import { useInjectedProvider } from "../contexts/InjectedProviderContext";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
-  const { connectWallet, isConnecting, isConnected, disconnect, address } =
-    useWallet();
-  useEffect(() => {
-    console.log(address);
-  }, [address]);
-  const { ens, avatar, loading: loadingENS } = useENS({ address });
+
+  const {address, isUpdating, connectProvider, disconnectDapp, injectedChain, injectedProvider} = useInjectedProvider();
   const isMinting = false;
 
   return (
@@ -35,12 +30,12 @@ export default function Home() {
         >
           <SpinningGlobe />
           <Box className={styles.nav}>
-            {!isConnected && (
+            {!injectedProvider && (
               <Image
                 src="/images/connect.png"
                 alt=""
                 className={styles.connectButton}
-                onClick={() => connectWallet()}
+                onClick={() => connectProvider()}
               />
             )}
             {address && (
@@ -78,6 +73,8 @@ export default function Home() {
           </Box>
           <RedNewsMarquee />
         </Box>
+        <br />
+        <br />
         <Box
           name="enter the cheebieverse"
           sx={{

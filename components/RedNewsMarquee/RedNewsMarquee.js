@@ -25,11 +25,6 @@ export const RedNewsMarquee = (props) => {
 
   return (
     <Box className={styles.container}>
-      <Image
-        src="/images/NewsBanner.png"
-        alt=""
-        className={styles.newsbanner}
-      />
       <h3 className={styles.headline}>BREAKING</h3>
       <div className={styles.marqueeContainer}>
         <Box
