@@ -36,7 +36,7 @@ export default function Home() {
         >
           <SpinningGlobe />
           <Box className={styles.nav}>
-            {!injectedProvider && (
+            {/* {!injectedProvider && (
               <Image
                 src="/images/connect.png"
                 alt=""
@@ -48,7 +48,7 @@ export default function Home() {
               <Box className={styles.userAddress} onClick={() => disconnect()}>
                 {(loadingENS && "Loading ENS") || ens || formatAddress(address)}
               </Box>
-            )}
+            )} */}
             <Box sx={{ display: `flex`, alignItems: `center`, gap: `1rem` }}>
               <Link href="https://discord.gg/cheebiez">
                 <a target="_blank" rel="nofollow">
