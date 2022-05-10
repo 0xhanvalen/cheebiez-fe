@@ -222,7 +222,7 @@ export default function Home() {
                 src="/images/TeamIcons/Photonic.png"
               />
               <TeamMember
-                name="kyle"
+                name="st4rgard3n "
                 role="smart contracts"
                 src="/images/TeamIcons/Kyle.png"
               />
