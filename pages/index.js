@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { Box, Image } from "@chakra-ui/react";
@@ -40,19 +40,29 @@ export default function Home() {
 
   useEffect(() => {
     async function getPrice() {
-      const tempPrice = await contract?.read?.getPrice();
-      const otherPrice = ethers.utils.formatUnits(tempPrice);
-      setPrice(otherPrice);
+      if (contract?.read) {
+        const tempPrice = await contract?.read?.getPrice();
+        const otherPrice = ethers.utils.formatUnits(tempPrice);
+        setPrice(otherPrice);
+      }
     }
     getPrice();
-  },[contract]);
+  }, [contract]);
 
   const getCheeb = async (amount) => {
-    const transaction = contract?.write?.getCheeb(address, amount, ({value: ethers.utils.parseUnits(price)*2}));
+    const transaction = contract?.write?.getCheeb(address, amount, {
+      value: ethers.utils.parseUnits(price) * 2,
+    });
     const something = await signer.sendTransaction(transaction);
     const receipt = transaction.wait();
     console.log(receipt);
-  }
+  };
+
+  const mintGardenRef = useRef(null);
+
+  const scrollToMintArea = () => {
+    mintGardenRef.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
@@ -111,6 +121,7 @@ export default function Home() {
                   src="/images/MINT.png"
                   alt=""
                   className={styles.mintButton}
+                  onClick={() => scrollToMintArea()}
                 />
               )}
             </Box>
@@ -316,7 +327,11 @@ export default function Home() {
             </Box>
           </Box>
         </Box>
-        <Box name="mint-garden" className={styles.mintGarden}>
+        <Box
+          name="mint-garden"
+          className={styles.mintGarden}
+          ref={mintGardenRef}
+        >
           <div className={styles.mintGardenConnect}>
             {!provider && (
               <Image
@@ -335,12 +350,20 @@ export default function Home() {
               </Box>
             )}
           </div>
-          {!isMintingModalOpen && (
+          {!isMintingModalOpen && address && (
             <div
               className={styles.mintGardenOpenModal}
               onClick={() => setIsMintingModalOpen(true)}
             >
               MINT
+            </div>
+          )}
+          {!isMintingModalOpen && !address && (
+            <div
+              className={styles.mintGardenOpenModal}
+              onClick={() => connectApp()}
+            >
+              Connect
             </div>
           )}
           {isMintingModalOpen && (
@@ -353,8 +376,18 @@ export default function Home() {
               ></div>
               <div className={styles.mintGardenModal}>
                 <h2>Mint Cheebiez</h2>
-                <div className={styles.getCheebButton} onClick={() => getCheeb(1)}>Mint 1 Cheeb</div>
-                <div className={styles.getCheebButton} onClick={() => getCheeb(2)}>Mint 2 Cheebz</div>
+                <div
+                  className={styles.getCheebButton}
+                  onClick={() => getCheeb(1)}
+                >
+                  Mint 1 Cheeb
+                </div>
+                <div
+                  className={styles.getCheebButton}
+                  onClick={() => getCheeb(2)}
+                >
+                  Mint 2 Cheebz
+                </div>
               </div>
             </>
           )}

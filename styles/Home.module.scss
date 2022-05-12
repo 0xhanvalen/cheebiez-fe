@@ -430,11 +430,13 @@ $tablet: 1200px;
   width: fit-content;
   background-color: white;
   font-family: "Wildside", sans-serif;
-  color: cyan;
+  color: #4bc6ff;
   padding: 1rem 3rem;
   font-size: 4rem;
   border-radius: 5rem;
   transition: all 0.25s;
+  height: fit-content;
+  z-index: 525600;
   &:hover {
     transform: translateX(-50%) translateY(-55%);
     cursor: pointer;
@@ -449,6 +451,7 @@ $tablet: 1200px;
   background-color: rgba(0,0,0,0.25);
   width: 100vw;
   height: 100%;
+  z-index: 525600;
 }
 .mintGardenModal {
   display: block;
@@ -460,11 +463,13 @@ $tablet: 1200px;
   height: auto;
   transform: translateX(-50%) translateY(-50%);
   padding: 1rem 2rem;
+  z-index: 525600;
   h2 {
     font-size: 3rem;
     font-family: "Wildside", sans-serif;
   }
 }
+
 
 .getCheebButton {
   display: block;
