@@ -51,7 +51,7 @@ export default function Home() {
 
   const getCheeb = async (amount) => {
     const transaction = contract?.write?.getCheeb(address, amount, {
-      value: ethers.utils.parseUnits(price) * 2,
+      value: ethers.utils.parseUnits(price) * amount,
     });
     const something = await signer.sendTransaction(transaction);
     const receipt = transaction.wait();
