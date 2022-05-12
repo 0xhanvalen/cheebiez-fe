@@ -467,6 +467,13 @@ $tablet: 1200px;
   h2 {
     font-size: 3rem;
     font-family: "Wildside", sans-serif;
+    text-align: center;
+  }
+  h3 {
+    font-size: 2rem;
+    font-family: "DK Hand", sans-serif;
+    margin: 0 auto;
+    text-align: center;
   }
 }
 
@@ -477,6 +484,52 @@ $tablet: 1200px;
   font-family: "DK Hand", sans-serif;
   font-size: 2rem;
   padding: 1rem 2rem;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
+    background-color: bisque;
+  }
+}
+
+.cheebListButton {
+  display: block;
+  border: 1px solid black;
+  font-family: "DK Hand", sans-serif;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 50px;
+  &:hover {
+    cursor: pointer;
+    background-color: bisque;
+  }
+}
+
+.selectMintAmountRow {
+  display: flex;
+  justify-content: center;
+}
+
+.incrementCheebz {
+  display: block;
+  border: 1px solid black;
+  font-family: "DK Hand", sans-serif;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 0px 50px 50px 0px;
+  &:hover {
+    cursor: pointer;
+    background-color: bisque;
+  }
+}
+
+.decrementCheebz {
+  display: block;
+  border: 1px solid black;
+  font-family: "DK Hand", sans-serif;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 50px 0px 0px 50px;
   &:hover {
     cursor: pointer;
     background-color: bisque;

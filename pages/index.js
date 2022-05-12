@@ -24,6 +24,11 @@ export default function Home() {
   } = useEthersContext();
   const [contract, setContract] = useState(null);
   const [price, setPrice] = useState(null);
+  const [mintAmount, setMintAmount] = useState(1);
+  const [isCheeblist, setIsCheeblist] = useState(false);
+  const [cheeblistProof, setCheebListProof] = useState(null);
+  const [isCheeblistRedeemed, setIsCheeblistRedeemed] = useState(false);
+  const [cheeblistAmount, setCheeblistAmount] = useState(1);
 
   const isMinting = true;
   const [isMintingModalOpen, setIsMintingModalOpen] = useState(false);
@@ -37,6 +42,35 @@ export default function Home() {
     }
     getData();
   }, [provider, signer]);
+
+  async function getCheeblist(addressToCheck) {
+    const stringedAddress = JSON.stringify({ address: addressToCheck });
+    const req = {
+      method: "POST",
+      body: stringedAddress,
+    };
+    const res = await fetch("/api/merkle", req);
+    const jsonres = await res.json();
+    console.log(jsonres);
+    setIsCheeblist(jsonres?.isCheeblist);
+    setCheebListProof(jsonres?.cheeblist?.hexProof);
+  }
+
+  useEffect(() => {
+    if (address) {
+      getCheeblist(address);
+    }
+  }, [address]);
+
+  useEffect(() => {
+    const getRedemptionValue = async () => {
+      if (contract?.read && address && isCheeblist) {
+        const redemptionVal = await contract?.read?.cheebListClaim(address);
+        setIsCheeblistRedeemed(redemptionVal);
+      }
+    };
+    getRedemptionValue();
+  }, [isCheeblist, contract, address]);
 
   useEffect(() => {
     async function getPrice() {
@@ -56,6 +90,66 @@ export default function Home() {
     const something = await signer.sendTransaction(transaction);
     const receipt = transaction.wait();
     console.log(receipt);
+  };
+
+  const incrementCheebz = () => {
+    setMintAmount((v) => {
+      if (v + 1 > 20) {
+        return v;
+      } else {
+        return v + 1;
+      }
+    });
+  };
+
+  const decrementCheebz = () => {
+    setMintAmount((v) => {
+      if (v - 1 < 1) {
+        return v;
+      } else {
+        return v - 1;
+      }
+    });
+  };
+
+  const incrementCheeblist = () => {
+    setCheeblistAmount((v) => {
+      if (v + 1 > 3) {
+        return v;
+      } else {
+        return v + 1;
+      }
+    });
+  };
+
+  const decrementCheeblist = () => {
+    setCheeblistAmount((v) => {
+      if (v - 1 < 1) {
+        return v;
+      } else {
+        return v - 1;
+      }
+    });
+  };
+
+  const redeemCheeblist = async (amount) => {
+    console.log(amount);
+    console.log(cheeblistProof);
+    const transaction = contract?.write?.cheebListMint(
+      amount,
+      cheeblistProof,
+      {
+        value: ethers.utils.parseUnits(price) * amount,
+      }
+    );
+    const something = await signer.sendTransaction(transaction);
+    const receipt = transaction.wait();
+    console.log(receipt);
+  };
+
+  const cleanPrice = (priceAsString) => {
+    let tempPrice = `${priceAsString}`;
+    return tempPrice.substring(0, 5);
   };
 
   const mintGardenRef = useRef(null);
@@ -376,18 +470,57 @@ export default function Home() {
               ></div>
               <div className={styles.mintGardenModal}>
                 <h2>Mint Cheebiez</h2>
-                <div
-                  className={styles.getCheebButton}
-                  onClick={() => getCheeb(1)}
-                >
-                  Mint 1 Cheeb
+                <h3>
+                  Ξ{cleanPrice(price * mintAmount)} <br />
+                </h3>
+                <div className={styles.selectMintAmountRow}>
+                  <div
+                    className={styles.decrementCheebz}
+                    onClick={() => decrementCheebz()}
+                  >
+                    -
+                  </div>
+                  <div
+                    className={styles.getCheebButton}
+                    onClick={() => getCheeb(mintAmount)}
+                  >
+                    Mint {mintAmount} Cheeb{mintAmount > 1 ? "iez" : "ie"}
+                  </div>
+                  <div
+                    className={styles.incrementCheebz}
+                    onClick={() => incrementCheebz()}
+                  >
+                    +
+                  </div>
                 </div>
-                <div
-                  className={styles.getCheebButton}
-                  onClick={() => getCheeb(2)}
-                >
-                  Mint 2 Cheebz
-                </div>
+                {isCheeblist && !isCheeblistRedeemed && (
+                  <>
+                    <br />
+                    <h3>
+                  Ξ{cleanPrice(price * cheeblistAmount)} <br />
+                </h3>
+                    <div className={styles.selectMintAmountRow}>
+                      <div
+                        className={styles.decrementCheebz}
+                        onClick={() => decrementCheeblist()}
+                      >
+                        -
+                      </div>
+                      <div
+                        className={styles.getCheebButton}
+                        onClick={() => redeemCheeblist(cheeblistAmount)}
+                      >
+                        Redeem {cheeblistAmount} Cheeb{cheeblistAmount > 1 ? "iez" : "ie"}
+                      </div>
+                      <div
+                        className={styles.incrementCheebz}
+                        onClick={() => incrementCheeblist()}
+                      >
+                        +
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             </>
           )}
