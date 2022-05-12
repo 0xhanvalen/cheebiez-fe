@@ -5,19 +5,54 @@ import { Box, Image } from "@chakra-ui/react";
 import { SpinningGlobe } from "../components/SpinningGlobe/SpinningGlobe";
 import { RedNewsMarquee } from "../components/RedNewsMarquee/RedNewsMarquee";
 import { Footer } from "../components/Footer/Footer";
-import { useInjectedProvider } from "../contexts/InjectedProviderContext";
+import { useEthersContext } from "../contexts/EthersContext";
+import { formatAddress } from "../utils/methods";
+import { CheebiezContract } from "../utils/contract";
 import styles from "../styles/Home.module.scss";
+import { ethers } from "ethers";
 
 export default function Home() {
   const {
-    address,
     isUpdating,
-    connectProvider,
-    disconnectDapp,
-    injectedChain,
-    injectedProvider,
-  } = useInjectedProvider();
-  const isMinting = false;
+    connectApp,
+    disconnectApp,
+    provider,
+    signer,
+    address,
+    web3Modal,
+    ens,
+  } = useEthersContext();
+  const [contract, setContract] = useState(null);
+  const [price, setPrice] = useState(null);
+
+  const isMinting = true;
+  const [isMintingModalOpen, setIsMintingModalOpen] = useState(false);
+
+  useEffect(() => {
+    async function getData() {
+      if (provider && signer) {
+        const tempContract = await CheebiezContract(provider, signer);
+        setContract(tempContract);
+      }
+    }
+    getData();
+  }, [provider, signer]);
+
+  useEffect(() => {
+    async function getPrice() {
+      const tempPrice = await contract?.read?.getPrice();
+      const otherPrice = ethers.utils.formatUnits(tempPrice);
+      setPrice(otherPrice);
+    }
+    getPrice();
+  },[contract]);
+
+  const getCheeb = async (amount) => {
+    const transaction = contract?.write?.getCheeb(address, amount, ({value: ethers.utils.parseUnits(price)*2}));
+    const something = await signer.sendTransaction(transaction);
+    const receipt = transaction.wait();
+    console.log(receipt);
+  }
 
   return (
     <>
@@ -36,19 +71,22 @@ export default function Home() {
         >
           <SpinningGlobe />
           <Box className={styles.nav}>
-            {/* {!injectedProvider && (
+            {!provider && (
               <Image
                 src="/images/connect.png"
                 alt=""
                 className={styles.connectButton}
-                onClick={() => connectProvider()}
+                onClick={() => connectApp()}
               />
             )}
             {address && (
-              <Box className={styles.userAddress} onClick={() => disconnect()}>
-                {(loadingENS && "Loading ENS") || ens || formatAddress(address)}
+              <Box
+                className={styles.userAddress}
+                onClick={() => disconnectApp()}
+              >
+                {(isUpdating && "Loading Address") || formatAddress(address)}
               </Box>
-            )} */}
+            )}
             <Box sx={{ display: `flex`, alignItems: `center`, gap: `1rem` }}>
               <Link href="https://discord.gg/cheebiez">
                 <a target="_blank" rel="nofollow">
@@ -260,23 +298,11 @@ export default function Home() {
           />
           <Box className={styles.roadmapInnerGrid}>
             <Box className={styles.roadmapItems}>
-              <Image
-                src="/images/questionMarkBubble.png"
-                alt="?"
-              />
+              <Image src="/images/questionMarkBubble.png" alt="?" />
               <Box className={styles.roadmapSmallItems}>
-                <Image
-                  src="/images/questionMarkBubbleSmall.png"
-                  alt="?"
-                />
-                <Image
-                  src="/images/questionMarkBubbleSmall.png"
-                  alt="?"
-                />
-                <Image
-                  src="/images/questionMarkBubbleSmall.png"
-                  alt="?"
-                />
+                <Image src="/images/questionMarkBubbleSmall.png" alt="?" />
+                <Image src="/images/questionMarkBubbleSmall.png" alt="?" />
+                <Image src="/images/questionMarkBubbleSmall.png" alt="?" />
               </Box>
             </Box>
             <Box className={styles.roadMapContent}>
@@ -291,6 +317,47 @@ export default function Home() {
           </Box>
         </Box>
         <Box name="mint-garden" className={styles.mintGarden}>
+          <div className={styles.mintGardenConnect}>
+            {!provider && (
+              <Image
+                src="/images/connect.png"
+                alt=""
+                className={styles.connectButton}
+                onClick={() => connectApp()}
+              />
+            )}
+            {address && (
+              <Box
+                className={styles.userAddress}
+                onClick={() => disconnectApp()}
+              >
+                {(isUpdating && "Loading Address") || formatAddress(address)}
+              </Box>
+            )}
+          </div>
+          {!isMintingModalOpen && (
+            <div
+              className={styles.mintGardenOpenModal}
+              onClick={() => setIsMintingModalOpen(true)}
+            >
+              MINT
+            </div>
+          )}
+          {isMintingModalOpen && (
+            <>
+              <div
+                className={styles.mintGardenModalBG}
+                onClick={() => {
+                  setIsMintingModalOpen(false);
+                }}
+              ></div>
+              <div className={styles.mintGardenModal}>
+                <h2>Mint Cheebiez</h2>
+                <div className={styles.getCheebButton} onClick={() => getCheeb(1)}>Mint 1 Cheeb</div>
+                <div className={styles.getCheebButton} onClick={() => getCheeb(2)}>Mint 2 Cheebz</div>
+              </div>
+            </>
+          )}
           <Image
             src="/images/MintSun.png"
             alt="The Sun"
