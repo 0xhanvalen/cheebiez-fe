@@ -458,7 +458,7 @@ export default function Page() {
             privacy and publicity) of others; <br />
             (vi) engage in, promote, or encourage illegal activity (including,
             without limitation, money laundering); <br />
-            (vii) interfere with other users' enjoyment of the Sites; <br />
+            (vii) interfere with other users&apos; enjoyment of the Sites; <br />
             (viii) exploit the Sites for any unauthorized commercial purpose;{" "}
             <br />
             (ix) modify, adapt, translate, or reverse engineer any portion of
@@ -561,7 +561,7 @@ export default function Page() {
             “Proposals”) other than those we have specifically requested. The
             intent of this policy is to avoid the possibility of future
             misunderstandings when projects developed by Jacqueline Choe Art,
-            LLC's employees and agents might seem to be similar to Proposals.
+            LLC&apos;s employees and agents might seem to be similar to Proposals.
             Accordingly, we ask that you not send Proposals to anyone at
             Jacqueline Choe Art, LLC through any communication channel.
           </p>
@@ -607,7 +607,7 @@ export default function Page() {
             Jacqueline Choe Art, LLC respects the intellectual property of
             others. If you believe that your work has been copied in a way that
             constitutes copyright infringement, please provide Jacqueline Choe
-            Art, LLC's Digital Millennium Copyright Act (“DMCA”) designated
+            Art, LLC&apos;s Digital Millennium Copyright Act (“DMCA”) designated
             agent the written information specified below:
           </p>
           <p>
@@ -631,11 +631,11 @@ export default function Page() {
           <p>
             A statement by you, made under penalty of perjury, that the above
             information in your notice is accurate and that you are the
-            copyright owner or authorized to act on the copyright owner's
+            copyright owner or authorized to act on the copyright owner&apos;s
             behalf.
           </p>
           <p>
-            Jacqueline Choe Art, LLC's Copyright Agent for notice of claims of
+            Jacqueline Choe Art, LLC&apos;s Copyright Agent for notice of claims of
             copyright infringement on the Sites can be reached as follows:
           </p>
           <p>Email: jisuchoeart@gmail.com</p>
@@ -709,7 +709,7 @@ export default function Page() {
             its subsidiaries, affiliates, officers, agents, employees,
             advertisers, licensors, suppliers or partners harmless from and
             against any and all claims, damages, costs and expenses, including
-            attorneys' fees, due to your use of the Sites and/or your breach of
+            attorneys&apos; fees, due to your use of the Sites and/or your breach of
             any representation, warranty, or other provision of the Agreement,
             or your violation of applicable laws, rules or regulations in
             connection with your access to or use of the Sites. You agree that
@@ -813,7 +813,7 @@ export default function Page() {
             after the removal of the cause. In the event that our failure or
             delay remains uncured for a period of forty-five (45) consecutive
             days following written notice given by us, we may thereafter
-            terminate this Agreement upon fifteen (15) days' written notice.
+            terminate this Agreement upon fifteen (15) days&apos; written notice.
           </p>
           <h3>Assignment</h3>
           <p>
@@ -993,7 +993,7 @@ export default function Page() {
             the State of California, without regard to any conflict of law
             provisions. The waiver of any provision of the Agreement shall not
             be considered a waiver of any other provision or of Jacqueline Choe
-            Art, LLC's right to require strict observance of each of the terms
+            Art, LLC&apos;s right to require strict observance of each of the terms
             herein. This Agreement constitutes the entire agreement between us
             relating to your use of the Sites. This Agreement does not and is
             not intended to confer any rights or remedies upon any person or
