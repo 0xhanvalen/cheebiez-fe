@@ -1,0 +1,36 @@
+.title {
+  background: #f1f9f8;
+  color: #443742;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 50px;
+  width: fit-content;
+  font-family: "Wildside", sans-serif;
+  font-size: 60px;
+  align-self: center;
+}
+
+.container {
+  background: #f1f9f8;
+  color: #443742;
+  padding: 3rem;
+  margin: 2rem auto;
+  border-radius: 50px;
+  font-family: sans-serif;
+  font-size: 24px;
+  max-width: 1000px;
+  p {
+    line-height: 1.25;
+    margin-bottom: 2rem;
+    text-align: justify;
+  }
+  h3 {
+      font-weight: 800;
+      text-decoration: underline;
+      margin-bottom: 1rem;
+  }
+  ol {
+      margin-inline-start: 1em;
+      margin-bottom: 2rem;
+  }
+}

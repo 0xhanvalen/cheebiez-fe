@@ -421,6 +421,9 @@ export default function Home() {
             </Box>
           </Box>
         </Box>
+        <Box name="faq" className={styles.faqContainer}>
+          
+        </Box>
         <Box
           name="mint-garden"
           className={styles.mintGarden}
