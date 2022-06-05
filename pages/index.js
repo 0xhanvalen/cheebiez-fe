@@ -260,6 +260,19 @@ export default function Home() {
         />
         <br />
         {/* Core Features */}
+        <Box>
+          <Image
+            src="/images/Core_Features.png"
+            alt="Core Features"
+            sx={{
+              position: `absolute`,
+              left: `50%`,
+              transform: `translatex(-50%)`,
+              maxWidth: `60vw`
+            }}
+          />
+        </Box>
+        <Box sx={{height: `25vh`}}></Box>
         <br />
         {/* Great At Any Size - Image Right */}
         <Box
@@ -277,7 +290,7 @@ export default function Home() {
                 profile picture and stand out on any feed!
               </p>
             </Box>
-            <Box>
+            <Box sx={{justifySelf: `start`, alignSelf: `start`, width: `80%`}}>
               <Image
                 src="/images/CheebieApple.png"
                 alt="A cheebie apple"
@@ -295,14 +308,14 @@ export default function Home() {
           }}
         >
           <Box className={styles.whatAreCheebiezGrid}>
-            <Box>
+            <Box sx={{justifySelf: `end`, alignSelf: `center`, width: `80%`}}>
               <Image
                 src="/images/Say_Cheeb.png"
                 alt="CheebU Freshman Photo Class of 2022"
                 className={styles.cheebieAugustus}
               />
             </Box>
-            <Box className={styles.whatAreCheebiezContentContainer}>
+            <Box className={styles.whatAreCheebiezContentContainer} sx={{justifySelf: `start`}}>
               <h2 className={styles.whatAreCheebiezHeadline}>Diversity</h2>
               <p className={styles.whatAreCheebiezContent}>
                 They boast a diverse range of skin tones, hair styles, and

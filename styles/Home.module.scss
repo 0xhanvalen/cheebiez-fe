@@ -86,11 +86,13 @@ $tablet: 1200px;
   grid-template-columns: 1fr 1fr;
   place-items: center;
   height: 100%;
+  width: 90vw;
+  margin: 2rem auto;
   @media screen and (max-width: $tablet) {
     grid-template-columns: 1fr;
     grid-gap: 0rem;
     height: auto;
-    margin-top: 15vh;
+    align-items: center;
   }
   @media screen and (max-width: 700px) {
     margin-top: 10rem;
@@ -190,6 +192,8 @@ $tablet: 1200px;
   grid-template-columns: 1fr 1fr;
   place-items: center;
   height: 100%;
+  max-width: 90vw;
+  margin: 2rem auto;
   @media screen and (max-width: $tablet) {
     grid-template-columns: 1fr;
     grid-gap: 0rem;
