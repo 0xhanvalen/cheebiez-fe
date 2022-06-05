@@ -135,13 +135,9 @@ export default function Home() {
   const redeemCheeblist = async (amount) => {
     console.log(amount);
     console.log(cheeblistProof);
-    const transaction = contract?.write?.cheebListMint(
-      amount,
-      cheeblistProof,
-      {
-        value: ethers.utils.parseUnits(price) * amount,
-      }
-    );
+    const transaction = contract?.write?.cheebListMint(amount, cheeblistProof, {
+      value: ethers.utils.parseUnits(price) * amount,
+    });
     const something = await signer.sendTransaction(transaction);
     const receipt = transaction.wait();
     console.log(receipt);
@@ -262,6 +258,89 @@ export default function Home() {
           }}
           className={styles.cloudOne}
         />
+        <br />
+        {/* Core Features */}
+        <br />
+        {/* Great At Any Size - Image Right */}
+        <Box
+          name="all sizes"
+          sx={{
+            width: `100vw`,
+          }}
+        >
+          <Box className={styles.enterCheebieverseGrid}>
+            <Box>
+              <h2 className={styles.cheebieverseHeadline}>Great at Any Size</h2>
+              <p className={styles.cheebieverseContent}>
+                Cheebiez are designed to look great whether big or small.
+                Whether they&apos;re on desktop or mobile, they serve as a great
+                profile picture and stand out on any feed!
+              </p>
+            </Box>
+            <Box>
+              <Image
+                src="/images/CheebieApple.png"
+                alt="A cheebie apple"
+                className={styles.cheebieApple}
+              />
+            </Box>
+          </Box>
+        </Box>
+        <br />
+        {/* Diversity - Image Left */}
+        <Box
+          name="what are cheebiez"
+          sx={{
+            width: `100vw`,
+          }}
+        >
+          <Box className={styles.whatAreCheebiezGrid}>
+            <Box>
+              <Image
+                src="/images/Say_Cheeb.png"
+                alt="CheebU Freshman Photo Class of 2022"
+                className={styles.cheebieAugustus}
+              />
+            </Box>
+            <Box className={styles.whatAreCheebiezContentContainer}>
+              <h2 className={styles.whatAreCheebiezHeadline}>Diversity</h2>
+              <p className={styles.whatAreCheebiezContent}>
+                They boast a diverse range of skin tones, hair styles, and
+                backgrounds! There are countless traits with each trait having
+                its own variations. Every trait is also gender-neutral, allowing
+                you to decide for yourself how your Cheebie identifies!
+              </p>
+            </Box>
+          </Box>
+        </Box>
+        <br />
+        {/* RP Fun - Image Right */}
+        <Box
+          name="enter the cheebieverse"
+          sx={{
+            width: `100vw`,
+          }}
+        >
+          <Box className={styles.enterCheebieverseGrid}>
+            <Box>
+              <h2 className={styles.cheebieverseHeadline}>Role-play Fun!</h2>
+              <p className={styles.cheebieverseContent}>
+                Cheebiez was inspired by our favorite online games! We are a
+                community first project and want to provide an environment for
+                you to make new friends and memories within the NFT space :)
+              </p>
+            </Box>
+            <Box>
+              <Image
+                src="/images/Cheebie_Role-Play_Asset.png"
+                alt="Cheebiez RPing"
+                className={styles.cheebieApple}
+              />
+            </Box>
+          </Box>
+        </Box>
+        <br />
+        <br />
         <br />
         <Box
           name="what are cheebiez"
@@ -421,9 +500,7 @@ export default function Home() {
             </Box>
           </Box>
         </Box>
-        <Box name="faq" className={styles.faqContainer}>
-          
-        </Box>
+        <Box name="faq" className={styles.faqContainer}></Box>
         <Box
           name="mint-garden"
           className={styles.mintGarden}
@@ -500,8 +577,8 @@ export default function Home() {
                   <>
                     <br />
                     <h3>
-                  Ξ{cleanPrice(price * cheeblistAmount)} <br />
-                </h3>
+                      Ξ{cleanPrice(price * cheeblistAmount)} <br />
+                    </h3>
                     <div className={styles.selectMintAmountRow}>
                       <div
                         className={styles.decrementCheebz}
@@ -513,7 +590,8 @@ export default function Home() {
                         className={styles.getCheebButton}
                         onClick={() => redeemCheeblist(cheeblistAmount)}
                       >
-                        Redeem {cheeblistAmount} Cheeb{cheeblistAmount > 1 ? "iez" : "ie"}
+                        Redeem {cheeblistAmount} Cheeb
+                        {cheeblistAmount > 1 ? "iez" : "ie"}
                       </div>
                       <div
                         className={styles.incrementCheebz}
