@@ -290,10 +290,10 @@ export default function Home() {
                 profile picture and stand out on any feed!
               </p>
             </Box>
-            <Box sx={{justifySelf: `start`, alignSelf: `start`, width: `80%`}}>
+            <Box sx={{justifySelf: `start`, alignSelf: `center`, width: `100%`}}>
               <Image
-                src="/images/CheebieApple.png"
-                alt="A cheebie apple"
+                src="/images/Great_at_any_size_asset.png"
+                alt="Cheebieverse Featuring Paris, Snoop, and Miku-san"
                 className={styles.cheebieApple}
               />
             </Box>
