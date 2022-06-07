@@ -1,13 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { Box, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Image
+} from "@chakra-ui/react";
 import { SpinningGlobe } from "../components/SpinningGlobe/SpinningGlobe";
 import { RedNewsMarquee } from "../components/RedNewsMarquee/RedNewsMarquee";
 import { Footer } from "../components/Footer/Footer";
 import { useEthersContext } from "../contexts/EthersContext";
 import { formatAddress } from "../utils/methods";
 import { CheebiezContract } from "../utils/contract";
+import {FAQ} from '../components/FAQ/FAQ';
 import styles from "../styles/Home.module.scss";
 import { ethers } from "ethers";
 
@@ -268,11 +272,11 @@ export default function Home() {
               position: `absolute`,
               left: `50%`,
               transform: `translatex(-50%)`,
-              maxWidth: `60vw`
+              maxWidth: `60vw`,
             }}
           />
         </Box>
-        <Box sx={{height: `25vh`}}></Box>
+        <Box sx={{ height: `25vh` }}></Box>
         <br />
         {/* Great At Any Size - Image Right */}
         <Box
@@ -290,7 +294,9 @@ export default function Home() {
                 profile picture and stand out on any feed!
               </p>
             </Box>
-            <Box sx={{justifySelf: `start`, alignSelf: `center`, width: `100%`}}>
+            <Box
+              sx={{ justifySelf: `start`, alignSelf: `center`, width: `100%` }}
+            >
               <Image
                 src="/images/Great_at_any_size_asset.png"
                 alt="Cheebieverse Featuring Paris, Snoop, and Miku-san"
@@ -299,6 +305,7 @@ export default function Home() {
             </Box>
           </Box>
         </Box>
+        x
         <br />
         {/* Diversity - Image Left */}
         <Box
@@ -308,14 +315,17 @@ export default function Home() {
           }}
         >
           <Box className={styles.whatAreCheebiezGrid}>
-            <Box sx={{justifySelf: `end`, alignSelf: `center`, width: `80%`}}>
+            <Box sx={{ justifySelf: `end`, alignSelf: `center`, width: `80%` }}>
               <Image
                 src="/images/Say_Cheeb.png"
                 alt="CheebU Freshman Photo Class of 2022"
                 className={styles.cheebieAugustus}
               />
             </Box>
-            <Box className={styles.whatAreCheebiezContentContainer} sx={{justifySelf: `start`}}>
+            <Box
+              className={styles.whatAreCheebiezContentContainer}
+              sx={{ justifySelf: `start` }}
+            >
               <h2 className={styles.whatAreCheebiezHeadline}>Diversity</h2>
               <p className={styles.whatAreCheebiezContent}>
                 They boast a diverse range of skin tones, hair styles, and
@@ -513,13 +523,16 @@ export default function Home() {
             </Box>
           </Box>
         </Box>
-        <Box name="faq" className={styles.faqContainer}></Box>
+        <Box name="faq" className={styles.faqContainer}>
+          <h3>FAQ</h3>
+          <FAQ />
+        </Box>
         <Box
           name="mint-garden"
           className={styles.mintGarden}
           ref={mintGardenRef}
         >
-          <div className={styles.mintGardenConnect}>
+          {/* <div className={styles.mintGardenConnect}>
             {!provider && (
               <Image
                 src="/images/connect.png"
@@ -617,7 +630,7 @@ export default function Home() {
                 )}
               </div>
             </>
-          )}
+          )} */}
           <Image
             src="/images/MintSun.png"
             alt="The Sun"
