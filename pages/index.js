@@ -34,7 +34,7 @@ export default function Home() {
   const [isCheeblistRedeemed, setIsCheeblistRedeemed] = useState(false);
   const [cheeblistAmount, setCheeblistAmount] = useState(1);
 
-  const isMinting = true;
+  const isMinting = false;
   const [isMintingModalOpen, setIsMintingModalOpen] = useState(false);
 
   useEffect(() => {
