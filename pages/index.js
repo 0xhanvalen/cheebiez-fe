@@ -153,10 +153,15 @@ export default function Home() {
   };
 
   const mintGardenRef = useRef(null);
+  const faqRef = useRef(null);
 
   const scrollToMintArea = () => {
     mintGardenRef.current.scrollIntoView({ behavior: "smooth" });
   };
+
+  const scrollToFaq = () => {
+    faqRef.current.scrollIntoView({behavior: "smooth"});
+  }
 
   return (
     <>
@@ -192,6 +197,12 @@ export default function Home() {
               </Box>
             )}
             <Box sx={{ display: `flex`, alignItems: `center`, gap: `1rem` }}>
+            <Box
+                className={styles.userAddress}
+                onClick={() => scrollToFaq()}
+              >
+                FAQ
+              </Box>
               <Link href="https://discord.gg/cheebiez">
                 <a target="_blank" rel="nofollow">
                   <Image
@@ -523,7 +534,7 @@ export default function Home() {
             </Box>
           </Box>
         </Box>
-        <Box name="faq" className={styles.faqContainer}>
+        <Box name="faq" ref={faqRef} className={styles.faqContainer}>
           <h3>FAQ</h3>
           <FAQ />
         </Box>
@@ -647,7 +658,7 @@ export default function Home() {
             className={styles.mintBush}
           />
         </Box>
-        <Footer />
+        <Footer scrollToFaq={scrollToFaq}/>
       </Box>
     </>
   );

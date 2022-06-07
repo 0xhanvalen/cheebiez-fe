@@ -11,6 +11,12 @@ export const Footer = (props) => {
         className={styles.footerLogo}
       />
       <Box className={styles.socialRow}>
+        <Box onClick={props?.scrollToFaq}>
+          FAQ
+        </Box>
+        <Link href="/tos">
+          <a>Terms of Service</a>
+        </Link>
         <Link href="https://discord.gg/cheebiez">
           <a>
             <Image
