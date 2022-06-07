@@ -33,8 +33,10 @@ export default function Home() {
   const [cheeblistProof, setCheebListProof] = useState(null);
   const [isCheeblistRedeemed, setIsCheeblistRedeemed] = useState(false);
   const [cheeblistAmount, setCheeblistAmount] = useState(1);
+  const [isMinting, setIsMinting] = useState(false);
+  const [isPublicSaleOn, setIsPublicSaleOn] = useState(false);
+  const [isCheeblistOn, setIsCheeblistOn] = useState(false);
 
-  const isMinting = false;
   const [isMintingModalOpen, setIsMintingModalOpen] = useState(false);
 
   useEffect(() => {
@@ -82,6 +84,13 @@ export default function Home() {
         const tempPrice = await contract?.read?.getPrice();
         const otherPrice = ethers.utils.formatUnits(tempPrice);
         setPrice(otherPrice);
+        const tempCheeblistActive = await contract?.read?.isCheebListOn();
+        const tempPublicSaleActive = await contract?.read?.isPublicSaleOn();
+        setIsCheeblistOn(tempCheeblistActive);
+        setIsPublicSaleOn(tempPublicSaleActive);
+        if (tempCheeblistActive || tempPublicSaleActive) {
+          setIsMinting(true);
+        }
       }
     }
     getPrice();
@@ -543,7 +552,7 @@ export default function Home() {
           className={styles.mintGarden}
           ref={mintGardenRef}
         >
-          {/* <div className={styles.mintGardenConnect}>
+          <div className={styles.mintGardenConnect}>
             {!provider && (
               <Image
                 src="/images/connect.png"
@@ -641,7 +650,7 @@ export default function Home() {
                 )}
               </div>
             </>
-          )} */}
+          )}
           <Image
             src="/images/MintSun.png"
             alt="The Sun"

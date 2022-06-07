@@ -1,8 +1,8 @@
 const { MerkleTree } = require("merkletreejs");
 const keccak256 = require("keccak256");
-import { REAL_CHEEBLIST } from "../../utils/allowlist";
+import { cheeblist } from "../../utils/allowlist";
 
-const cheebieNodes = REAL_CHEEBLIST.map((addr) => keccak256(addr));
+const cheebieNodes = cheeblist.map((addr) => keccak256(addr));
 const tree = new MerkleTree(cheebieNodes, keccak256, {
   sortPairs: true,
 });
