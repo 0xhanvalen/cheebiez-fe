@@ -33,7 +33,7 @@ export default function Home() {
   const [cheeblistProof, setCheebListProof] = useState(null);
   const [isCheeblistRedeemed, setIsCheeblistRedeemed] = useState(false);
   const [cheeblistAmount, setCheeblistAmount] = useState(1);
-  const [isMinting, setIsMinting] = useState(false);
+  const [isMinting, setIsMinting] = useState(true);
   const [isPublicSaleOn, setIsPublicSaleOn] = useState(false);
   const [isCheeblistOn, setIsCheeblistOn] = useState(false);
 
