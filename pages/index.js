@@ -29,6 +29,7 @@ export default function Home() {
   const [isCheeblist, setIsCheeblist] = useState(false);
   const [cheeblistProof, setCheebListProof] = useState(null);
   const [isCheeblistRedeemed, setIsCheeblistRedeemed] = useState(false);
+  const [cheeblistLeaf, setCheeblistLeaf] = useState();
   const [cheeblistAmount, setCheeblistAmount] = useState(1);
   const [isMinting, setIsMinting] = useState(true);
   const [isPublicSaleOn, setIsPublicSaleOn] = useState(false);
@@ -54,9 +55,9 @@ export default function Home() {
     };
     const res = await fetch("/api/merkle", req);
     const jsonres = await res.json();
-    console.log(jsonres);
     setIsCheeblist(jsonres?.isCheeblist);
     setCheebListProof(jsonres?.cheeblist?.hexProof);
+    setCheeblistLeaf(jsonres?.cheeblist?.leaf);
   }
 
   useEffect(() => {
@@ -67,26 +68,46 @@ export default function Home() {
 
   useEffect(() => {
     const getRedemptionValue = async () => {
-      if (contract?.read && address && isCheeblist) {
+      if (
+        contract?.read &&
+        address &&
+        isCheeblist &&
+        cheeblistProof &&
+        cheeblistLeaf
+      ) {
+        const leaf = cheeblistLeaf.toString("hex");
+        try {
+          const verifyTx = await contract?.read?.verifyClaim(
+            cheeblistProof,
+            "0xb908fbf3f265267aab7f74cca6bea9b65449babba40481d044b26647a24be4fe",
+            leaf
+          );
+        } catch (error) {
+          console.log(error);
+        }
         const redemptionVal = await contract?.read?.cheebListClaim(address);
         setIsCheeblistRedeemed(redemptionVal);
       }
     };
     getRedemptionValue();
-  }, [isCheeblist, contract, address]);
+  }, [isCheeblist, contract, address, cheeblistProof && cheeblistLeaf]);
+
+  const merkleProof = [
+    "0x7e20de81fe179ce9e02ac8c1c56d8be1f15cff04044a1b586477f68a0d2eb47e",
+    "0x9ccfabbe0676faedc57089bb73a8a8547edcb076f2220fb15a7531d9f3c724be",
+    "0x58403f75345ddfcf5d5fddc0ee9aca1d400c43aa8684181b13ec6183f058e7ef",
+  ];
 
   useEffect(() => {
     async function getPrice() {
       if (contract?.read) {
         const tempPrice = await contract?.read?.getPrice();
         const otherPrice = ethers.utils.formatUnits(tempPrice);
-        console.log({ otherPrice });
         setPrice(otherPrice);
         const tempCheeblistActive = await contract?.read?.isCheebListOn();
         const tempPublicSaleActive = await contract?.read?.isPublicSaleOn();
         setIsCheeblistOn(tempCheeblistActive);
         setIsPublicSaleOn(tempPublicSaleActive);
-        console.log({ isCheeblistOn, isPublicSaleOn });
         if (tempCheeblistActive || tempPublicSaleActive) {
           setIsMinting(true);
         }
@@ -96,12 +117,14 @@ export default function Home() {
   }, [contract]);
 
   const getCheeb = async (amount) => {
-    const transaction = contract?.write?.getCheeb(address, amount, {
-      value: ethers.utils.parseUnits(price) * amount,
+    let tempPrice = ethers.utils.parseUnits(
+      ((price * 1000 * amount) / 1000).toString(),
+      "ether"
+    );
+    const transaction = await contract?.write?.getCheeb(address, amount, {
+      value: tempPrice,
     });
-    const something = await signer.sendTransaction(transaction);
     const receipt = transaction.wait();
-    console.log(receipt);
   };
 
   const incrementCheebz = () => {
@@ -145,18 +168,18 @@ export default function Home() {
   };
 
   const redeemCheeblist = async (amount) => {
-    console.log(amount);
-    console.log(cheeblistProof);
-    const tempPrice = ethers.utils.parseUnits(
-      (price * amount).toString(),
+    let tempPrice = ethers.utils.parseUnits(
+      ((price * 1000 * amount) / 1000).toString(),
       "ether"
     );
-    console.log({ tempPrice });
-    const transaction = await contract?.write?.cheebListMint(amount, cheeblistProof, {
-      value: tempPrice,
-    });
+    const transaction = await contract?.write?.cheebListMint(
+      amount,
+      cheeblistProof,
+      {
+        value: tempPrice,
+      }
+    );
     const receipt = transaction.wait();
-    console.log(receipt);
   };
 
   const cleanPrice = (priceAsString) => {

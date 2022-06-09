@@ -13,14 +13,13 @@ export default function handler(req, res) {
   try {
     let leaf = keccak256(addressToCheck);
     let root = tree.getRoot().toString("hex");
-    console.log({root});
     let proof = tree.getProof(leaf);
     let hexProof = tree.getHexProof(leaf);
     let isCheeblist = tree.verify(proof, leaf, root);
     res
       .status(200)
       .json({
-        cheeblist: { proof, isCheeblist, hexProof },
+        cheeblist: { proof, isCheeblist, hexProof, leaf },
         isCheeblist,
       });
   } catch (error) {
