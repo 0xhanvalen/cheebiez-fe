@@ -13,6 +13,7 @@ export default function handler(req, res) {
   try {
     let leaf = keccak256(addressToCheck);
     let root = tree.getRoot().toString("hex");
+    console.log({root});
     let proof = tree.getProof(leaf);
     let hexProof = tree.getHexProof(leaf);
     let isCheeblist = tree.verify(proof, leaf, root);

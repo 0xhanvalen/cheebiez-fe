@@ -7,18 +7,20 @@ export const CheebiezContract = async (provider, signer) => {
     let contractAddress;
     let network = await provider.getNetwork();
     let chainID = network.chainId;
+    console.log({chainID});
 
     if (chainID == "1") {
         contractAddress = MN_ADDRESS;
     }
     
-    // if (chainID == "100") {
-    //     contractAddress = GC_ADDRESS;
-    // }
+    if (chainID == "100") {
+        console.log("GC CHAIN");
+        contractAddress = GC_ADDRESS;
+    }
 
-    // if (chainID == "4") {
-    //     contractAddress = RB_ADDRESS;
-    // }
+    if (chainID == "4") {
+        contractAddress = RB_ADDRESS;
+    }
 
     if (typeof contractAddress == "undefined") {
         alert("You must change your chain");

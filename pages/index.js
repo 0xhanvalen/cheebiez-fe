@@ -1,19 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import {
-  Box,
-  Image
-} from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 import { SpinningGlobe } from "../components/SpinningGlobe/SpinningGlobe";
 import { RedNewsMarquee } from "../components/RedNewsMarquee/RedNewsMarquee";
 import { Footer } from "../components/Footer/Footer";
 import { useEthersContext } from "../contexts/EthersContext";
 import { formatAddress } from "../utils/methods";
 import { CheebiezContract } from "../utils/contract";
-import {FAQ} from '../components/FAQ/FAQ';
+import { FAQ } from "../components/FAQ/FAQ";
 import styles from "../styles/Home.module.scss";
-import { ethers } from "ethers";
+import { BigNumber, ethers } from "ethers";
 
 export default function Home() {
   const {
@@ -83,11 +80,13 @@ export default function Home() {
       if (contract?.read) {
         const tempPrice = await contract?.read?.getPrice();
         const otherPrice = ethers.utils.formatUnits(tempPrice);
+        console.log({ otherPrice });
         setPrice(otherPrice);
         const tempCheeblistActive = await contract?.read?.isCheebListOn();
         const tempPublicSaleActive = await contract?.read?.isPublicSaleOn();
         setIsCheeblistOn(tempCheeblistActive);
         setIsPublicSaleOn(tempPublicSaleActive);
+        console.log({ isCheeblistOn, isPublicSaleOn });
         if (tempCheeblistActive || tempPublicSaleActive) {
           setIsMinting(true);
         }
@@ -127,7 +126,7 @@ export default function Home() {
 
   const incrementCheeblist = () => {
     setCheeblistAmount((v) => {
-      if (v + 1 > 3) {
+      if (v + 1 > 6) {
         return v;
       } else {
         return v + 1;
@@ -148,10 +147,14 @@ export default function Home() {
   const redeemCheeblist = async (amount) => {
     console.log(amount);
     console.log(cheeblistProof);
-    const transaction = contract?.write?.cheebListMint(amount, cheeblistProof, {
-      value: ethers.utils.parseUnits(price) * amount,
+    const tempPrice = ethers.utils.parseUnits(
+      (price * amount).toString(),
+      "ether"
+    );
+    console.log({ tempPrice });
+    const transaction = await contract?.write?.cheebListMint(amount, cheeblistProof, {
+      value: tempPrice,
     });
-    const something = await signer.sendTransaction(transaction);
     const receipt = transaction.wait();
     console.log(receipt);
   };
@@ -169,8 +172,8 @@ export default function Home() {
   };
 
   const scrollToFaq = () => {
-    faqRef.current.scrollIntoView({behavior: "smooth"});
-  }
+    faqRef.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
@@ -206,10 +209,7 @@ export default function Home() {
               </Box>
             )}
             <Box sx={{ display: `flex`, alignItems: `center`, gap: `1rem` }}>
-            <Box
-                className={styles.userAddress}
-                onClick={() => scrollToFaq()}
-              >
+              <Box className={styles.userAddress} onClick={() => scrollToFaq()}>
                 FAQ
               </Box>
               <Link href="https://discord.gg/cheebiez">
@@ -596,30 +596,34 @@ export default function Home() {
               ></div>
               <div className={styles.mintGardenModal}>
                 <h2>Mint Cheebiez</h2>
-                <h3>
-                  Ξ{cleanPrice(price * mintAmount)} <br />
-                </h3>
-                <div className={styles.selectMintAmountRow}>
-                  <div
-                    className={styles.decrementCheebz}
-                    onClick={() => decrementCheebz()}
-                  >
-                    -
-                  </div>
-                  <div
-                    className={styles.getCheebButton}
-                    onClick={() => getCheeb(mintAmount)}
-                  >
-                    Mint {mintAmount} Cheeb{mintAmount > 1 ? "iez" : "ie"}
-                  </div>
-                  <div
-                    className={styles.incrementCheebz}
-                    onClick={() => incrementCheebz()}
-                  >
-                    +
-                  </div>
-                </div>
-                {isCheeblist && !isCheeblistRedeemed && (
+                {isPublicSaleOn && (
+                  <>
+                    <h3>
+                      Ξ{cleanPrice(price * mintAmount)} <br />
+                    </h3>
+                    <div className={styles.selectMintAmountRow}>
+                      <div
+                        className={styles.decrementCheebz}
+                        onClick={() => decrementCheebz()}
+                      >
+                        -
+                      </div>
+                      <div
+                        className={styles.getCheebButton}
+                        onClick={() => getCheeb(mintAmount)}
+                      >
+                        Mint {mintAmount} Cheeb{mintAmount > 1 ? "iez" : "ie"}
+                      </div>
+                      <div
+                        className={styles.incrementCheebz}
+                        onClick={() => incrementCheebz()}
+                      >
+                        +
+                      </div>
+                    </div>
+                  </>
+                )}
+                {isCheeblist && !isCheeblistRedeemed && isCheeblistOn && (
                   <>
                     <br />
                     <h3>
@@ -636,7 +640,7 @@ export default function Home() {
                         className={styles.getCheebButton}
                         onClick={() => redeemCheeblist(cheeblistAmount)}
                       >
-                        Redeem {cheeblistAmount} Cheeb
+                        Mint {cheeblistAmount} Cheeb
                         {cheeblistAmount > 1 ? "iez" : "ie"}
                       </div>
                       <div
@@ -667,7 +671,7 @@ export default function Home() {
             className={styles.mintBush}
           />
         </Box>
-        <Footer scrollToFaq={scrollToFaq}/>
+        <Footer scrollToFaq={scrollToFaq} />
       </Box>
     </>
   );
