@@ -149,7 +149,7 @@ export default function Home() {
 
   const incrementCheeblist = () => {
     setCheeblistAmount((v) => {
-      if (v + 1 > 6) {
+      if (v + 1 > 5) {
         return v;
       } else {
         return v + 1;
@@ -675,9 +675,16 @@ export default function Home() {
                     </div>
                   </>
                 )}
+                {isCheeblistOn && !isCheeblist && (
+                  <>
+                    <br />
+                    <h3>🍎 Come back during Public Mint after 3:15 PDT 🍎</h3>
+                  </>
+                )}
               </div>
             </>
           )}
+
           <Image
             src="/images/MintSun.png"
             alt="The Sun"
